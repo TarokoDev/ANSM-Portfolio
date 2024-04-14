@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700'); 
+ 
  /* Mobile Screen */
 .container {
     height: 100%;
@@ -8,6 +10,7 @@
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
+    background-color: whitesmoke;
 }
 
 .component {
@@ -18,9 +21,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: whitesmoke;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
 @keyframes showTopText {
   0% { transform: translate3d(0, 100%, 0); }
   40%, 60% { transform: translate3d(0, 50%, 0); }
