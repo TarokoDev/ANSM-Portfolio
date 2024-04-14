@@ -1,0 +1,52 @@
+.container {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+}
+
+.active {
+    color: red;  /* Change text color for active link */
+}
+
+
+.component {
+    /* border: 2px solid var(--primary-color); */
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    min-height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    width: 40%;
+    margin-left: 20px;
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 60%;
+    padding-right: 20px;
+    gap: 10px;
+}
+
+
+.component a {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 480px) {
+
+}
