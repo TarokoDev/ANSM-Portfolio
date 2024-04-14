@@ -36,7 +36,8 @@ export default function About() {
                         <div className={styles.header}>Education</div>
                         <div className={styles.description}>
                             <div>
-                                BSc Comp. Sci. - Bachelor of Computer Science
+                                Bachelor of Computer Science, Major in Digital
+                                Systems & Security
                             </div>
                             <div>Diploma in Product Design & Innovation</div>
                         </div>

@@ -26,6 +26,12 @@
     
 }
 
+.header {
+    font-size: large;
+    font-weight: 600;
+    
+}
+
 img {
     height: 200px;
     object-fit: cover;
