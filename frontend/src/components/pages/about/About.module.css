@@ -4,18 +4,131 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 10px;
     box-sizing: border-box;
+    
 }
 
 .component {
-    border: 2px solid black;
+    gap: 20px; /* Increased gap between sections */
     margin-top: 60px;
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    border: 5px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    
+}
+
+img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch; 
+    gap: 10px;
+}
+
+.aboutme {
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: var(--box-shadow);
+    background-color: white;
+}
+
+.education {
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: var(--box-shadow);
+    background-color: white;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    
+}
+
+@media screen and (min-width: 480px) {
+    .component {
+        gap: 20px;
+        margin-top: 60px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 10px solid black;
+        box-sizing: border-box;
+        
+    }
+
+    img {
+        height: 200px;
+        object-fit: cover;
+        border-radius: 100px;
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .cards {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    .aboutme {
+        /* border: 2px solid black; */
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+        box-shadow: var(--box-shadow);
+    }
+
+    .education {
+        /* border: 2px solid black; */
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+        box-shadow: var(--box-shadow);
+    }
 }
