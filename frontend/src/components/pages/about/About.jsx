@@ -26,7 +26,7 @@ export default function About() {
                             designing. I have since transitioned into web
                             development, where I can apply my creativity and
                             problem-solving skills to create beautiful and
-                            functional websites.
+                            functional web applications.
                         </div>
                     </div>
                     <div className={styles.education}>
