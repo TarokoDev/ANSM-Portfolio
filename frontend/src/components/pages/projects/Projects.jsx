@@ -20,10 +20,8 @@ export default function Projects() {
                                 app.
                             </div>
                             <div className={styles.stack}>
-                                <div>React</div>
-                                <div>Node.js</div>
-                                <div>Express</div>
-                                <div>MongoDB</div>
+                                <div>M E R N</div>
+                                <div>Vite</div>
                                 <div>Netlify</div>
                                 <div>Render</div>
                             </div>
@@ -40,7 +38,40 @@ export default function Projects() {
                                     className={styles.button}
                                     target="_blank"
                                 >
-                                    More Info
+                                    Info
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.project}>
+                        <div className={styles.image}>
+                            <img
+                                src="/kimchinc.png"
+                                alt="kimchinc"
+                                className={styles.image}
+                                style={{ height: "200px" }}
+                            />
+                        </div>
+                        <div className={styles.description}>
+                            <div className={styles.title}>Kimchinc</div>
+                            <div className={styles.summary}>
+                                Kimchinc is an app for managing and tracking
+                                hospital deliveries
+                            </div>
+                            <div className={styles.stack}>
+                                <div>M E R N</div>
+                                <div>Tailwind</div>
+                                <div>Netlify</div>
+                                <div>Render</div>
+                            </div>
+                            <div className={styles.buttons}>
+                                <a
+                                    href="https://kimchinc.netlify.app"
+                                    className={styles.button}
+                                    target="_blank"
+                                >
+                                    Visit
                                 </a>
                             </div>
                         </div>
@@ -60,10 +91,11 @@ export default function Projects() {
                                 Portfoliooooception?
                             </div>
                             <div className={styles.stack}>
-                                <div>React Vite</div>
+                                <div>React</div>
                                 <div>HTML</div>
                                 <div>CSS</div>
                                 <div>Javascript</div>
+                                <div>Vite</div>
                                 <div>Netlify</div>
                             </div>
                             <div className={styles.buttons}>
@@ -72,7 +104,7 @@ export default function Projects() {
                                     className={styles.button}
                                     target="_blank"
                                 >
-                                    Visit again for that nice animation
+                                    Click me for that nice animation again
                                 </a>
                             </div>
                         </div>
