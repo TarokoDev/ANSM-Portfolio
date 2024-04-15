@@ -64,9 +64,10 @@ img {
 }
 
 .summary {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--text-color);
+
 
 }
 

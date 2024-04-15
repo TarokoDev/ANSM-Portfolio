@@ -24,6 +24,8 @@ export default function Projects() {
                                 <div>Node.js</div>
                                 <div>Express</div>
                                 <div>MongoDB</div>
+                                <div>Netlify</div>
+                                <div>Render</div>
                             </div>
                             <div className={styles.buttons}>
                                 <a
@@ -45,20 +47,17 @@ export default function Projects() {
                     </div>
 
                     <div className={styles.project}>
-                        {/* <div className={styles.image}>
+                        <div className={styles.image}>
                             <img
-                                src="/icon.png"
+                                src="/ansm.png"
                                 alt="AM Portfolio"
                                 className={styles.image}
-                                style={{ height: "100px" }}
                             />
-                        </div> */}
+                        </div>
                         <div className={styles.description}>
                             <div className={styles.title}>Portfolio</div>
                             <div className={styles.summary}>
-                                Welcome to my playground! Here, you'll find
-                                projects that not only show off my work, but
-                                also put my core skills on display.
+                                Portfoliooooception?
                             </div>
                             <div className={styles.stack}>
                                 <div>React Vite</div>
