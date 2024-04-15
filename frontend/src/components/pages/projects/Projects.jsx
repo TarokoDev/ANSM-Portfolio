@@ -44,31 +44,40 @@ export default function Projects() {
                         </div>
                     </div>
 
-                    {/* <div className={styles.project}>
-                        <div className={styles.image}>
+                    <div className={styles.project}>
+                        {/* <div className={styles.image}>
                             <img
-                                src="/yab.png"
-                                alt="YAB"
+                                src="/icon.png"
+                                alt="AM Portfolio"
                                 className={styles.image}
+                                style={{ height: "100px" }}
                             />
-                        </div>
+                        </div> */}
                         <div className={styles.description}>
-                            <div className={styles.title}>Kimchinc</div>
+                            <div className={styles.title}>Portfolio</div>
                             <div className={styles.summary}>
-                                Kimchinc is a delivery management app.
+                                Welcome to my playground! Here, you'll find
+                                projects that not only show off my work, but
+                                also put my core skills on display.
                             </div>
                             <div className={styles.stack}>
-                                <div>React</div>
-                                <div>Node.js</div>
-                                <div>Express</div>
-                                <div>MongoDB</div>
+                                <div>React Vite</div>
+                                <div>HTML</div>
+                                <div>CSS</div>
+                                <div>Javascript</div>
+                                <div>Netlify</div>
                             </div>
                             <div className={styles.buttons}>
-                                <button>Visit</button>
-                                <button>More Info</button>
+                                <a
+                                    href="https://austinmiranda.netlify.app"
+                                    className={styles.button}
+                                    target="_blank"
+                                >
+                                    Visit again for that nice animation
+                                </a>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </>
