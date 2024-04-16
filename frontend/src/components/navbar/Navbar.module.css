@@ -37,6 +37,7 @@
     height: 100%;
     text-align: center;
     width: 40%;
+    margin-left: 10px;
     
     
 }
@@ -49,7 +50,7 @@
     height: 100%;
     width: 60%;
     gap: 10px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 
@@ -64,13 +65,13 @@
 @media screen and (min-width: 407px) and (max-width: 479px) {
 
     .left {
-        margin-left: 10px;
+        margin-left: 20px;
     }
 
     .right {
         gap: 10px;
         justify-content: flex-end;
-        margin-right: 5px;
+        margin-right: 20px;
     }
 
     .component a {
