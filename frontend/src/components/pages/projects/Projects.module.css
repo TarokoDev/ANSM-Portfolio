@@ -1,4 +1,4 @@
- /* Mobile Screen */
+/* Mobile Screen */
 .container {
     height: 100%;
     width: 100%;
@@ -28,7 +28,6 @@
 }
 
 .project {
-    height: 600px;
     min-width: 100%;
     display: flex;
     flex-direction: row;
@@ -36,27 +35,28 @@
     align-items: center; 
     gap: 10px;
     height: 50%;
-    padding: 20px;
+    padding: 10px;
     background-color: white;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     box-sizing: border-box  ;
 }
 
-.image { 
-    height: 100%;
+.image {
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: content-box
 }
 
 img {
-    object-fit: cover;
-    border-radius: 0;
-    box-shadow: none;
+	min-width: 100%;
+    min-height: 100%;
 }
 
 .description {
+    width: 60%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -70,11 +70,9 @@ img {
 }
 
 .summary {
-    font-size: 18px;
+    font-size: calc(12px + 0.5vw); 
     font-weight: 500;
     color: var(--text-color);
-
-
 }
 
 .stack {
@@ -120,7 +118,34 @@ img {
     outline: none;
 }
 
-.instructions {
-    color: black;
+.component a {
+    text-decoration: none;
+    font-size: calc(12px + 0.5vw); /* Adjust base font size and scaling here */
+    line-height: 1;
+    text-align: center;
+}
+
+/* Media Queries */
+
+/* Smaller screens (default mobile-first approach) */
+@media screen and (max-width: 359px) {
+    
+    .summary {
+        font-size: calc(12px + 1vw); /* Slightly larger to prevent wrapping */
+    }
+}
+
+/* Larger mobile screens */
+@media screen and (min-width: 360px) and (max-width: 479px) {
+    .summary {
+        font-size: calc(12px + 0.75vw); /* Adjust scaling to prevent wrapping */
+    }
+}
+
+/* Tablet and above */
+@media screen and (min-width: 480px) {
+    .summary {
+        font-size: 15px; /* Fixed font size for larger screens */
+    }
 }
 

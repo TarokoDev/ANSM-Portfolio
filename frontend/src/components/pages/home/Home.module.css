@@ -83,9 +83,15 @@
   transform: translate(0, -100%);
 }
 
-/* Desktop Screen */
+/* Larger mobile screens */
+@media screen and (min-width: 407px) and (max-width: 479px) {
+
+}
+
+/* Tablet and above */
 @media screen and (min-width: 480px) {
-    .container {
+
+       .container {
         height: 100%;
         width: 100%;
         display: flex;

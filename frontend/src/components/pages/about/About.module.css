@@ -7,135 +7,134 @@
     padding: 10px;
     box-sizing: border-box;
     background-color: whitesmoke;
-    
 }
 
 .component {
-    gap: 20px; /* Increased gap between sections */
+    gap: 10px;
     margin-top: 60px;
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     border: 5px solid black;
     padding: 10px;
     box-sizing: border-box;
     background-color: whitesmoke;
+    overflow-y: auto;
     
 }
 
 .header {
-    font-size: large;
+    font-size: min(4vw, 18px);
     font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
     
 }
 
+.image {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 img {
-    height: 200px;
     object-fit: cover;
-    border-radius: 100px;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
 }
 
-.cards {
+.card {
+    border-radius: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: stretch; 
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: var(--box-shadow);
+    background-color: white;
     gap: 10px;
-}
-
-.aboutme {
-    /* border: 2px solid black; */
-    border-radius: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    box-sizing: border-box;
-    box-shadow: var(--box-shadow);
-    background-color: white;
-}
-
-.education {
-    /* border: 2px solid black; */
-    border-radius: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    box-sizing: border-box;
-    box-shadow: var(--box-shadow);
-    background-color: white;
+    text-align: center;
+    font-size: min(4vw, 18px);
 }
 
 .description {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
+    justify-content: center;
     gap: 10px;
-    
 }
 
-@media screen and (min-width: 480px) {
+/* Larger mobile screens */
+@media screen and (min-width: 407px) and (max-width: 479px) {
+
     .component {
-        gap: 20px;
-        margin-top: 60px;
-        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        border-radius: 10px;
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        border: 10px solid black;
+        align-items: center;
+        padding: 10px;
         box-sizing: border-box;
+        box-shadow: var(--box-shadow);
+        background-color: white;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+
+}
+
+/* Tablet and above */
+@media screen and (min-width: 480px) {
+
+    .component {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         
     }
 
-    img {
-        height: 200px;
-        object-fit: cover;
-        border-radius: 100px;
-        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .cards {
-        width: 100%;
+    .card {
+        width: 500px;
+        height: 50%;
+        overflow-y: auto;
         display: flex;
-        flex-direction: row;
         justify-content: center;
-        gap: 10px;
-        box-sizing: border-box;
+        align-items: center;
     }
 
-    .aboutme {
-        /* border: 2px solid black; */
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        box-sizing: border-box;
-        box-shadow: var(--box-shadow);
+    .header {
+        font-size: min(2vw, 18px);
     }
 
-    .education {
-        /* border: 2px solid black; */
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        box-sizing: border-box;
-        box-shadow: var(--box-shadow);
+    .description {
+        text-align: center;
+        
     }
+
 }

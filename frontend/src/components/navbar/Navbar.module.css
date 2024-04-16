@@ -8,47 +8,92 @@
     padding: 10px;
     box-sizing: border-box;
     position: fixed;
-    top: 0px;
     z-index: 1000;
+    padding-bottom: 0;
 }
 
 .active {
-    color: red;  /* Change text color for active link */
+    color: red;
 }
 
 
 .component {
-    /* border: 2px solid var(--primary-color); */
     background-color: white;
     box-shadow: var(--box-shadow);
-    /* border: 2px solid black; */
-    min-height: 50px;
+    height: 100%;
     width: 100%;
     border-radius: 10px;
     display: flex;
     align-items: center;
     color: var(--text-color);
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    text-align: center;
     width: 40%;
-    margin-left: 20px;
+    
+    
 }
 
 .right {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
+    height: 100%;
     width: 60%;
-    padding-right: 20px;
     gap: 10px;
+    margin-right: 5px;
 }
 
 
 .component a {
     text-decoration: none;
+    font-size: calc(12px + 0.5vw); /* Adjust base font size and scaling here */
+    line-height: 1;
+    text-align: center;
 }
 
+/* Larger mobile screens */
+@media screen and (min-width: 407px) and (max-width: 479px) {
+
+    .left {
+        margin-left: 10px;
+    }
+
+    .right {
+        gap: 10px;
+        justify-content: flex-end;
+        margin-right: 5px;
+    }
+
+    .component a {
+        font-size: calc(12px + 0.75vw); /* Adjust scaling to prevent wrapping */
+    }
+}
+
+/* Tablet and above */
 @media screen and (min-width: 480px) {
 
+    .left {
+        margin-left: 20px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .right {
+        margin-right: 20px;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    .component a {
+        font-size: 15px; /* Fixed font size for larger screens */
+    }
 }
