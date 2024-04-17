@@ -22,6 +22,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: whitesmoke;
+    
 }
 
 
@@ -34,6 +35,7 @@
   0% { transform: translate3d(0, -100%, 0); }
   100% { transform: translate3d(0, 0, 0); }
 }
+
 .animatedTitle {
   color: #222;
   font-family: Roboto, Arial, sans-serif;
@@ -81,6 +83,40 @@
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
+}
+
+@keyframes slideAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.links {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px; 
+  padding: 20px; 
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 100px;
+  animation: slideAndFade  1s forwards;
+}
+
+.links a {
+    text-decoration: none;
+    color: black; 
+    transition: color 0.3s ease;  
+}
+
+.links a:hover {
+    color: #0056b3;  /* Changes color on hover */
 }
 
 /* Larger mobile screens */

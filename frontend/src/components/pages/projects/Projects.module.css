@@ -168,6 +168,10 @@ img {
         align-items: flex-start;
     }
 
+    .buttons a {
+        font-size: 14px;
+    }
+
     .image {
         height: 100%;
         width: 30%;

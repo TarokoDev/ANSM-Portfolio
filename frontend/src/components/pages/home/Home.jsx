@@ -12,8 +12,31 @@ export default function Home() {
                         </div>
                     </div>
                     <div className={styles.textBottom}>
-                        <div>Full-stack web developer based in Singapore</div>
+                        <div>Full-stack web developer</div>
                     </div>
+                </div>
+                <div className={styles.links}>
+                    <a
+                        href="https://github.com/TarokoDev"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Github
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/austin-miranda"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        LinkedIn
+                    </a>
+                    <a
+                        href="/path/to/your/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Resume
+                    </a>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ export default function Projects() {
                             <div className={styles.title}>You are broke!</div>
                             <div className={styles.summary}>
                                 YAB is a full-stack finance/budgeting management
-                                app.
+                                app
                             </div>
                             <div className={styles.stack}>
                                 <div>M E R N</div>

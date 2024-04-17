@@ -7,25 +7,17 @@ export default function About() {
     return (
         <div className={styles.container}>
             <div className={styles.component}>
-                {/* <div className={styles.image}>
-                    <img
-                        src="/icon.png"
-                        alt="Austin"
-                        className={styles.image}
-                    />
-                </div> */}
-
                 <div className={styles.card}>
                     <div className={styles.header}>
                         <IoPersonCircleOutline size="30px" />
                         <div className={styles.header}>About Me</div>
                     </div>
                     <div className={styles.description}>
-                        Originating from industrial design background, I have
+                        Originating from product design background, I have
                         always been passionate about creating and designing. I
                         have since transitioned into web development, where I
                         can apply my creativity and problem-solving skills to
-                        create modern and dynamic web applications.
+                        create modern and dynamic web applications
                     </div>
                 </div>
 
@@ -56,7 +48,7 @@ export default function About() {
                         <div>Backend: Node.js, Express, MongoDB</div>
                         <div>
                             Others: Git, Github, VsCode, JetBrains, Figma,
-                            Cypress, Python
+                            Cypress, Python, Postman
                         </div>
                     </div>
                 </div>
