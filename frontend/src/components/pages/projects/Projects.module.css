@@ -7,7 +7,6 @@
     padding: 10px;
     box-sizing: border-box;
     background-color: whitesmoke;
-    
 }
 
 .component {
@@ -21,6 +20,12 @@
     height: 100%;
     width: 100%;
     overflow-y: auto;
+    border: 5px solid black;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 
 .project {
@@ -102,7 +107,7 @@ img {
     font-size: 1rem;
     padding: 5px;
     border-radius: 5px;
-    background-color: var(--primary-color);
+    background-color: red;
     color: white;
     min-width: 50px;
     max-width: 100%;
@@ -126,6 +131,16 @@ img {
 
 /* Tablet and above */
 @media screen and (min-width: 480px) {
+
+    .description {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
 
 }
 
