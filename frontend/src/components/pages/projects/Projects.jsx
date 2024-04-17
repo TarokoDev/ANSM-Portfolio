@@ -6,40 +6,44 @@ export default function Projects() {
             <div className={styles.container}>
                 <div className={styles.component}>
                     <div className={styles.project}>
-                        <div className={styles.image}>
-                            <img
-                                src="/yab.png"
-                                alt="YAB"
-                                className={styles.image}
-                            />
-                        </div>
-                        <div className={styles.description}>
-                            <div className={styles.title}>You are broke!</div>
-                            <div className={styles.summary}>
-                                YAB is a full-stack finance/budgeting management
-                                app
+                        <div className={styles.content}>
+                            <div className={styles.image}>
+                                <img
+                                    src="/yab.png"
+                                    alt="YAB"
+                                    className={styles.image}
+                                />
                             </div>
-                            <div className={styles.stack}>
-                                <div>M E R N</div>
-                                <div>Vite</div>
-                                <div>Netlify</div>
-                                <div>Render</div>
-                            </div>
-                            <div className={styles.buttons}>
-                                <a
-                                    href="https://youarebroke.netlify.app"
-                                    className={styles.button}
-                                    target="_blank"
-                                >
-                                    Visit
-                                </a>
-                                <a
-                                    href="https://youarebroke.netlify.app/about"
-                                    className={styles.button}
-                                    target="_blank"
-                                >
-                                    Info
-                                </a>
+                            <div className={styles.description}>
+                                <div className={styles.title}>
+                                    You are broke!
+                                </div>
+                                <div className={styles.summary}>
+                                    YAB is a finance tracker & budgeting
+                                    management app.
+                                </div>
+                                <div className={styles.stack}>
+                                    <div>M E R N</div>
+                                    <div>Vite</div>
+                                    <div>Netlify</div>
+                                    <div>Render</div>
+                                </div>
+                                <div className={styles.buttons}>
+                                    <a
+                                        href="https://youarebroke.netlify.app"
+                                        className={styles.button}
+                                        target="_blank"
+                                    >
+                                        Visit
+                                    </a>
+                                    <a
+                                        href="https://youarebroke.netlify.app/about"
+                                        className={styles.button}
+                                        target="_blank"
+                                    >
+                                        Info
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -104,7 +108,7 @@ export default function Projects() {
                                     className={styles.button}
                                     target="_blank"
                                 >
-                                    Click me for that nice animation again
+                                    Click for that nice animation
                                 </a>
                             </div>
                         </div>
