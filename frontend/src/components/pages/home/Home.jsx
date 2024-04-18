@@ -31,7 +31,7 @@ export default function Home() {
                         LinkedIn
                     </a>
                     <a
-                        href="/path/to/your/resume.pdf"
+                        href="https://resume.io/r/2DWfuATB5"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
