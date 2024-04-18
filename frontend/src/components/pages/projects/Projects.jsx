@@ -60,8 +60,8 @@ export default function Projects() {
                         <div className={styles.description}>
                             <div className={styles.title}>Kimchinc</div>
                             <div className={styles.summary}>
-                                Kimchinc is an app for managing and tracking
-                                hospital deliveries
+                                Kimchinc is a delivery coordination system for
+                                Hospitals
                             </div>
                             <div className={styles.stack}>
                                 <div>M E R N</div>
