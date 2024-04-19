@@ -6,7 +6,7 @@ import Projects from "./components/pages/projects/Projects";
 
 function App() {
     return (
-        <>
+        <div className="main">
             <div id="navbar" className="navbar">
                 <Navbar />
             </div>
@@ -19,7 +19,7 @@ function App() {
             <div id="projects" className="projects">
                 <Projects />
             </div>
-        </>
+        </div>
     );
 }
 
