@@ -20,7 +20,8 @@ export default function Projects() {
                                 </div>
                                 <div className={styles.summary}>
                                     YAB is a finance tracker & budgeting
-                                    management app.
+                                    management app. Designed for mobile and web
+                                    platforms.
                                 </div>
                                 <div className={styles.stack}>
                                     <div>M E R N</div>
@@ -61,7 +62,8 @@ export default function Projects() {
                             <div className={styles.title}>Kimchinc</div>
                             <div className={styles.summary}>
                                 Kimchinc is a delivery coordination system for
-                                Hospitals.
+                                Hospitals. Designed for mobile and web
+                                platforms.
                             </div>
                             <div className={styles.stack}>
                                 <div>M E R N</div>
@@ -96,7 +98,7 @@ export default function Projects() {
                                 and track Jason Statham movies, and other
                                 movies, with detailed views and a one-click
                                 download request feature for convenient movie
-                                nights.
+                                nights. Designed for iOS.
                             </div>
                             <div className={styles.stack}>
                                 <div>React Native</div>
