@@ -42,8 +42,8 @@ export default function About() {
                     </div>
                     <div className={styles.description}>
                         <div>
-                            Frontend: HTML, CSS, JavaScript, React, Tailwind
-                            CSS, BootStrap
+                            Frontend: HTML, CSS, JavaScript, React,
+                            React-Native, Tailwind CSS, BootStrap
                         </div>
                         <div>Backend: Node.js, Express, MongoDB</div>
                         <div>
