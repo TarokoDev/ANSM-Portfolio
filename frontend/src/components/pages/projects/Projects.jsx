@@ -84,6 +84,42 @@ export default function Projects() {
                     <div className={styles.project}>
                         <div className={styles.image}>
                             <img
+                                src="/js.png"
+                                alt="js movie"
+                                className={styles.image}
+                            />
+                        </div>
+                        <div className={styles.description}>
+                            <div className={styles.title}>Pop's Picks</div>
+                            <div className={styles.summary}>
+                                Made for my dad, effortlessly explore, search
+                                and track Jason Statham movies, and other
+                                movies, with detailed views and a one-click
+                                download request feature for convenient movie
+                                nights.
+                            </div>
+                            <div className={styles.stack}>
+                                <div>React Native</div>
+                                <div>iOS</div>
+                                <div>Expo</div>
+                                <div>Javascript</div>
+                                <div>Netlify</div>
+                            </div>
+                            <div className={styles.buttons}>
+                                <a
+                                    // href="https://austinmiranda.netlify.app"
+                                    className={styles.button}
+                                    // target="_blank"
+                                >
+                                    Still a work in progress
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.project}>
+                        <div className={styles.image}>
+                            <img
                                 src="/ansm.png"
                                 alt="AM Portfolio"
                                 className={styles.image}
