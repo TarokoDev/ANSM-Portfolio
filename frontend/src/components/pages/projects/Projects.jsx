@@ -103,7 +103,6 @@ export default function Projects() {
                                 <div>iOS</div>
                                 <div>Expo</div>
                                 <div>Javascript</div>
-                                <div>Netlify</div>
                             </div>
                             <div className={styles.buttons}>
                                 <a
@@ -111,7 +110,7 @@ export default function Projects() {
                                     className={styles.button}
                                     // target="_blank"
                                 >
-                                    Still a work in progress
+                                    Work in progress
                                 </a>
                             </div>
                         </div>
