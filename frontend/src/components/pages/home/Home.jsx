@@ -12,7 +12,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className={styles.textBottom}>
-                        <div>Full-stack web developer</div>
+                        <div>Full-stack developer</div>
                     </div>
                 </div>
                 <div className={styles.links}>
