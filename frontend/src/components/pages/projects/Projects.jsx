@@ -61,7 +61,7 @@ export default function Projects() {
                             <div className={styles.title}>Kimchinc</div>
                             <div className={styles.summary}>
                                 Kimchinc is a delivery coordination system for
-                                Hospitals
+                                Hospitals.
                             </div>
                             <div className={styles.stack}>
                                 <div>M E R N</div>
@@ -128,7 +128,7 @@ export default function Projects() {
                         <div className={styles.description}>
                             <div className={styles.title}>Portfolio</div>
                             <div className={styles.summary}>
-                                Portfoliooooception?
+                                Portfoliooooception? Explore my Journey.
                             </div>
                             <div className={styles.stack}>
                                 <div>React</div>
