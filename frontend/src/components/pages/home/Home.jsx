@@ -1,4 +1,5 @@
 import styles from "./Home.module.css";
+import resume from '../../../../public/resume.pdf'
 
 export default function Home() {
     return (
@@ -30,10 +31,18 @@ export default function Home() {
                     >
                         LinkedIn
                     </a>
-                    <a
+                    {/* <a
                         href="https://resume.io/r/2DWfuATB5"
                         target="_blank"
                         rel="noopener noreferrer"
+                    >
+                        Resume
+                    </a> */}
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download="Austin Miranda - Resume 2024.pdf"
                     >
                         Resume
                     </a>
