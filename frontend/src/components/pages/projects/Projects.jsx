@@ -55,7 +55,6 @@ export default function Projects() {
                                 src="/kimchinc.png"
                                 alt="kimchinc"
                                 className={styles.image}
-                                style={{ height: "200px" }}
                             />
                         </div>
                         <div className={styles.description}>
