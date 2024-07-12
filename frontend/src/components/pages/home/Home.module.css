@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:700'); 
- 
- /* Mobile Screen */
+/* Mobile Screen */
 .container {
     height: 100dvh;
     width: 100%;
@@ -20,103 +18,60 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background-color: whitesmoke;
-    
+    position: relative; 
 }
 
-
-@keyframes showTopText {
-  0% { transform: translate3d(0, 100%, 0); }
-  40%, 60% { transform: translate3d(0, 50%, 0); }
-  100% { transform: translate3d(0, 0, 0); }
-}
-@keyframes showBottomText {
-  0% { transform: translate3d(0, -100%, 0); }
-  100% { transform: translate3d(0, 0, 0); }
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.animatedTitle {
-  color: #222;
-  font-family: Roboto, Arial, sans-serif;
-  height: 90vmin;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 90vmin;
-}
-.animatedTitle  > div {
-  height: 50%;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-}
-.animatedTitle  > div div {
-  font-size: 12vmin;
-  padding: 2vmin 0;
-  position: absolute;
-}
-.animatedTitle  > div div span {
-  display: block;
-}
-.animatedTitle  > div.textTop {
-  border-bottom: 1vmin solid #000;
-  top: 0;
-}
-.animatedTitle  > div.textTop div {
-  animation: showTopText 1s;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-  bottom: 0;
-  transform: translate(0, 100%);
-}
-.animatedTitle  > div.textTop div span:first-child {
-  color: #767676;
-}
-.animatedTitle  > div.textBottom {
-  bottom: 0;
-}
-.animatedTitle  > div.textBottom div {
-  animation: showBottomText 0.5s;
-  animation-delay: 1.75s;
-  animation-fill-mode: forwards;
-  top: 0;
-  transform: translate(0, -100%);
+.text {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    padding: 40px;
+    box-sizing: border-box;
+    color: white;
+    width: 100%;
 }
 
-@keyframes slideAndFade {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.textTop, .textBottom {
+    width: 100%;
 }
 
 .links {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 20px; 
-  padding: 20px; 
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 100px;
-  animation: slideAndFade  1s forwards;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 100%;
 }
 
 .links a {
     text-decoration: none;
-    color: black; 
+    color: white; 
     transition: color 0.3s ease;  
 }
 
 .links a:hover {
-    color: #0056b3;  /* Changes color on hover */
+    color: red;  /* Changes color on hover */
 }
 
 /* Larger mobile screens */
@@ -126,8 +81,7 @@
 
 /* Tablet and above */
 @media screen and (min-width: 480px) {
-
-       .container {
+    .container {
         height: 100%;
         width: 100%;
         display: flex;
@@ -139,14 +93,27 @@
     }
 
     .component {
-    border: 2px solid black;
-    margin-top: 60px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+        position: relative;
+        border: 2px solid black;
+        margin-top: 60px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-}
+    .text {
+        padding: 80px;
+        box-sizing: border-box;
+    }
 
+    .textTop {
+        font-size: 70px;
+    }
+
+    .textBottom {
+        font-size: 30px;
+    }
 }
