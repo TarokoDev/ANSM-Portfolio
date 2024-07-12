@@ -9,10 +9,11 @@
     padding: 10px;
     box-sizing: border-box;
     background-color: whitesmoke;
+    /* background-color: #455C81; */
 }
 
 .component {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin-top: 60px;
     height: 100%;
     width: 100%;
@@ -34,9 +35,9 @@
     z-index: 1;
     bottom: 0;
     left: 0;
-    padding: 40px;
+    padding: 20px;
     box-sizing: border-box;
-    color: white;
+    color: black;
     width: 100%;
 }
 
@@ -59,14 +60,14 @@
     align-items: flex-end;
     gap: 20px;
     font-size: 16px;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-top: 10px;
     width: 100%;
 }
 
 .links a {
     text-decoration: none;
-    color: white; 
+    color: black; 
     transition: color 0.3s ease;  
 }
 
@@ -90,11 +91,11 @@
         align-items: center;
         padding: 10px;
         box-sizing: border-box;
+        background-color: whitesmoke;
     }
 
     .component {
         position: relative;
-        border: 2px solid black;
         margin-top: 60px;
         height: 100%;
         width: 100%;

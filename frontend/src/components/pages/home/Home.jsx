@@ -30,7 +30,7 @@ export default function Home() {
                     onLoad={() => setIsSplineLoaded(true)}
                 />
 
-{!isLoading && (
+                {!isLoading && (
                     <div className={styles.text}>
                         <div className={styles.header}>
                             <div className={styles.textTop}>

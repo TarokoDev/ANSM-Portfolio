@@ -2,55 +2,68 @@ import styles from "./About.module.css";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { IoIosSchool } from "react-icons/io";
 import { GiBrain } from "react-icons/gi";
+import { useState } from "react";
+
+const aboutMe = [
+    {
+        icon: IoPersonCircleOutline,
+        title: "Background",
+        descriptions: "Originating from product design background, I have always been passionate about creating and designing. I have since transitioned into web development, where I can apply my creativity and problem-solving skills to create modern and dynamic web applications."
+    },
+    {
+        icon: IoIosSchool,
+        title: "Education",
+        descriptions: [
+            "I earned a Bachelor's in Computer Science from the University of Wollongong, majoring in Digital Systems and Security. It was an exhilarating journey filled with late-night coding sessions and breakthrough moments!",
+            "Before that, I honed my skills in Product Design and Innovation at Ngee Ann Polytechnic, where I learned to merge creativity with functionality."
+        ]
+    },
+    {
+        icon: GiBrain,
+        title: "Technologies",
+        descriptions: [
+            "Frontend: React JS, HTML, CSS, JavaScript, React-Native, Tailwind CSS, BootStrap, Vite, Expo",
+            "Backend: Node.js, Express, MongoDB, MySQL",
+            "Languages: Python, Javascript, Java, C++",
+            "Tools: Git, Github, Figma, Adobe XD, Spline, Cypress, Postman, Netlify, Render, OpenAI ChatGPT, npm, XCode Simulator"
+        ]
+    }
+];
+
 
 export default function About() {
+
+    const [activeButton, setActiveButton] = useState(0)
+    const [title, setTitle] = useState(aboutMe[activeButton].title)
+    const [descriptions, setDescription] = useState(aboutMe[activeButton].descriptions)
+
+
+    function handleClick(index) {
+        setActiveButton(index)
+        setTitle(aboutMe[index].title)
+        setDescription(aboutMe[index].descriptions)
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.component}>
-                <div className={styles.card}>
-                    <div className={styles.header}>
-                        <IoPersonCircleOutline size="30px" />
-                        <div className={styles.header}>About Me</div>
+                <div className={styles.content}>
+                    <div className={styles.title}>
+                        {title}
                     </div>
                     <div className={styles.description}>
-                        Originating from product design background, I have
-                        always been passionate about creating and designing. I
-                        have since transitioned into web development, where I
-                        can apply my creativity and problem-solving skills to
-                        create modern and dynamic web applications
+                        {Array.isArray(descriptions) ? (
+                            descriptions.map((description, i) => <li key={i}>{description}</li>)
+                        ) : (
+                            <p>{descriptions}</p>
+                        )}
                     </div>
+                    
                 </div>
-
-                <div className={styles.card}>
-                    <div className={styles.header}>
-                        <IoIosSchool size="30px" />
-                        <div className={styles.header}>Education</div>
-                    </div>
-                    <div className={styles.description}>
-                        <div>
-                            Bachelor of Computer Science, Major in Digital
-                            Systems & Security
-                        </div>
-                        <div>Diploma in Product Design & Innovation</div>
-                    </div>
-                </div>
-
-                <div className={styles.card}>
-                    <div className={styles.header}>
-                        <GiBrain size="30px" />
-                        <div className={styles.header}>Technologies</div>
-                    </div>
-                    <div className={styles.description}>
-                        <div>
-                            Frontend: HTML, CSS, JavaScript, React,
-                            React-Native, Tailwind CSS, BootStrap
-                        </div>
-                        <div>Backend: Node.js, Express, MongoDB</div>
-                        <div>
-                            Others: Git, Github, VsCode, JetBrains, Figma,
-                            Cypress, Python, Postman
-                        </div>
-                    </div>
+                <div className={styles.buttons}>
+                    <div onClick={() => handleClick(0)} className={activeButton === 0 ? styles.activeButton : ""}>Background</div>
+                    <div onClick={() => handleClick(1)} className={activeButton === 1 ? styles.activeButton : ""}>Education</div>
+                    <div onClick={() => handleClick(2)} className={activeButton === 2 ? styles.activeButton : ""}>Technical Skills</div>
                 </div>
             </div>
         </div>
