@@ -1,0 +1,132 @@
+/* Mobile Screen */
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    padding: 5px;
+    box-sizing: border-box;
+    /* background-color: aqua; */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.text {
+    position: absolute;
+    z-index: 1;
+    height: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+}
+
+.title {
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.description {
+    overflow-y: auto;
+    text-align: left;
+}
+
+.list {
+    list-style-type: disc;
+    
+}
+
+.list ul {
+
+    
+}
+
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.activeButton {
+    color: red;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.buttons a {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    min-width: 50px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.buttons .backButton {
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    min-width: 50px;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Media Queries */
+
+/* Smaller screens (default mobile-first approach) */
+@media screen and (max-width: 359px) {
+    .text {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+}
+
+/* Larger mobile screens */
+@media screen and (min-width: 360px) and (max-width: 479px) {
+    .text {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+}
+
+/* Tablet and above */
+@media screen and (min-width: 480px) {
+    .text {
+        height: 100%;
+        width: 25%;
+        right: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: start;
+        gap: 10px;
+    }
+}
