@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from './Project.module.css';
 import Spline from '@splinetool/react-spline';
 
-function Project({ splineSrc, data }) {
+function Project({ splineSrc, data}) {
     const [activeButton, setActiveButton] = useState("summary")
     const [description, setDescription] = useState(data.summary);
 
@@ -47,8 +47,14 @@ function Project({ splineSrc, data }) {
                         
                     </div>
                     <div className={styles.buttons}>
-                    <a className={styles.link} href={data.link}>Visit</a>
-
+                        {
+                            data.link === "Work in progress" ? (
+                                <a className={styles.link}>Work in Progress</a>
+                            ) : (
+                                <a className={styles.link} href={data.link} target="_blank">Visit</a>
+                            )
+                        }
+                        
                     </div>
                 </div>
             </div>
