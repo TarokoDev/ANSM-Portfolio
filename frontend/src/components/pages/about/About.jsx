@@ -1,17 +1,12 @@
 import styles from "./About.module.css";
-import { IoPersonCircleOutline } from "react-icons/io5";
-import { IoIosSchool } from "react-icons/io";
-import { GiBrain } from "react-icons/gi";
 import { useState } from "react";
 
 const aboutMe = [
     {
-        icon: IoPersonCircleOutline,
         title: "Background",
         descriptions: "Originating from product design background, I have always been passionate about creating and designing. I have since transitioned into web development, where I can apply my creativity and problem-solving skills to create modern and dynamic web applications."
     },
     {
-        icon: IoIosSchool,
         title: "Education",
         descriptions: [
             "I earned a Bachelor's in Computer Science from the University of Wollongong, majoring in Digital Systems and Security. It was an exhilarating journey filled with late-night coding sessions and breakthrough moments!",
@@ -19,7 +14,6 @@ const aboutMe = [
         ]
     },
     {
-        icon: GiBrain,
         title: "Technologies",
         descriptions: [
             "Frontend: React JS, HTML, CSS, JavaScript, React-Native, Tailwind CSS, BootStrap, Vite, Expo",

@@ -68,11 +68,10 @@
 .links a {
     text-decoration: none;
     color: black; 
-    transition: color 0.3s ease;  
 }
 
 .links a:hover {
-    color: red;  /* Changes color on hover */
+    color: red; 
 }
 
 /* Larger mobile screens */
@@ -116,5 +115,18 @@
 
     .textBottom {
         font-size: 30px;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: black; 
+        scale: 1;
+        transition: scale 0.2s ease-in;  
+    }
+    
+    .links a:hover {
+        color: red; 
+        scale: 1.2;
+        transition: scale 0.2s ease-out;
     }
 }

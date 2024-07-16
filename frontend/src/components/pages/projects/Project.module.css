@@ -36,6 +36,7 @@
 
 }
 
+
 .title {
     font-weight: 800;
     font-size: 1.5rem;
@@ -52,11 +53,6 @@
     
 }
 
-.list ul {
-
-    
-}
-
 
 .buttons {
     display: flex;
@@ -66,9 +62,12 @@
     width: 100%;
 }
 
+.buttons a, .buttons div{
+    cursor: pointer;
+}
+
 .activeButton {
     color: red;
-    font-weight: bolder;
     font-size: large;
 }
 
@@ -128,5 +127,22 @@
         align-items: flex-start;
         text-align: start;
         gap: 10px;
+    }
+
+    .buttons div {
+        cursor: pointer;
+        scale: 1;
+        transition: scale 0.2s ease-in ;
+    }
+    
+    .buttons div:hover {
+        color: red;
+        scale: 1.5;
+        transition: scale 0.2s ease-out;
+    }
+    
+    .activeButton {
+        color: red;
+        font-size: large;
     }
 }

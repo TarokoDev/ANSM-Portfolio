@@ -59,19 +59,18 @@
 
 }
 
-.activeButton {
-    /* box-shadow: var(--box-shadow);
-    background-color: red;
-    border-radius: 10px;
-    padding: 10px; */
-    color: red;
-    font-weight: bolder;
-    font-size: large;
+.buttons div {
+    cursor: pointer;
 }
 
+.buttons div:hover {
+    color: red;
+}
 
-
-
+.activeButton {
+    color: red;
+    font-size: large;
+}
 
 /* Larger mobile screens */
 @media screen and (min-width: 407px) and (max-width: 479px) {
@@ -83,6 +82,23 @@
 
     .content {
         width: 80%;
+    }
+
+    .buttons div {
+        cursor: pointer;
+        scale: 1;
+        transition: scale 0.2s ease-in ;
+    }
+    
+    .buttons div:hover {
+        color: red;
+        scale: 1.5;
+        transition: scale 0.2s ease-out;
+    }
+    
+    .activeButton {
+        color: red;
+        font-size: large;
     }
 
 }
