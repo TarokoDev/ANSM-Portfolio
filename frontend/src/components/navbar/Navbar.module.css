@@ -56,7 +56,7 @@
 
 .component a {
     text-decoration: none;
-    font-size: calc(12px + 0.5vw); /* Adjust base font size and scaling here */
+    font-size: calc(12px + 0.5vw); 
     line-height: 1;
     text-align: center;
 }
@@ -75,7 +75,7 @@
     }
 
     .component a {
-        font-size: calc(12px + 0.75vw); /* Adjust scaling to prevent wrapping */
+        font-size: calc(12px + 0.75vw); 
     }
 }
 
@@ -95,6 +95,6 @@
     }
 
     .component a {
-        font-size: 15px; /* Fixed font size for larger screens */
+        font-size: 15px; 
     }
 }
