@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from './Project.module.css';
 import Spline from '@splinetool/react-spline';
+import Button from "../../components/buttons/Button.jsx"
 
 function Project({ splineSrc, data}) {
     const [activeButton, setActiveButton] = useState("summary")
@@ -41,17 +42,39 @@ function Project({ splineSrc, data}) {
                         {description}
                     </div>
                     <div className={styles.buttons}>
-                        <div className={activeButton === "summary" ? styles.activeButton : ""} onClick={() => handleClick("summary") }>Summary</div>
-                        <div className={activeButton === "keyFeatures" ? styles.activeButton : ""} onClick={() => handleClick("keyFeatures")}>Features</div>
-                        <div className={activeButton === "techStack" ? styles.activeButton : ""} onClick={() => handleClick("techStack")}>Technologies</div>
+
+                        <Button 
+                            mode="text" 
+                            onHover="red" 
+                            onClick={() => handleClick("summary")} 
+                            active={activeButton === "summary"}
+                        >
+                            Summary
+                        </Button>
+                        <Button 
+                            mode="text" 
+                            onHover="red" 
+                            onClick={() => handleClick("keyFeatures")} 
+                            active={activeButton === "keyFeatures"}
+                        >
+                            Features
+                        </Button>
+                        <Button 
+                            mode="text" 
+                            onHover="red" 
+                            onClick={() => handleClick("techStack")} 
+                            active={activeButton === "techStack"}
+                        >
+                            Technologies
+                        </Button>
                         
                     </div>
-                    <div className={styles.buttons}>
+                    <div className={styles.visitButton}>
                         {
                             data.link === "Work in progress" ? (
-                                <a className={styles.link}>Work in Progress</a>
+                                <Button mode="filled" onHover="black">Work in Progress</Button>
                             ) : (
-                                <a className={styles.link} href={data.link} target="_blank">Visit</a>
+                                <Button mode="filled" onHover="black" link={data.link}>Visit</Button>
                             )
                         }
                         

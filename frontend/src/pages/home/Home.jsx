@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './Home.module.css';
 import Spline from '@splinetool/react-spline';
 import { ClimbingBoxLoader } from 'react-spinners';
+import Button from '../../components/buttons/Button.jsx';
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -41,28 +42,9 @@ export default function Home() {
                             </div>
                         </div>
                         <div className={styles.links}>
-                            <a
-                                href="https://github.com/TarokoDev"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Github
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/austin-miranda"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                LinkedIn
-                            </a>
-                            <a
-                                href="/resume.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                download="Austin Miranda - Resume 2024.pdf"
-                            >
-                                Resume
-                            </a>
+                            <Button mode="text" onHover="red" link="https://github.com/TarokoDev">Github</Button>
+                            <Button mode="text" onHover="red" link="https://www.linkedin.com/in/austin-miranda">LinkedIn</Button>
+                            <Button mode="text" onHover="red" link="/resume.pdf" downloadName="Austin Miranda - Resume 2024.pdf">Resume</Button>
                         </div>
                     </div>
                 )}

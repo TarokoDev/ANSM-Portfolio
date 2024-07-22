@@ -1,5 +1,6 @@
 import styles from "./About.module.css";
 import { useState } from "react";
+import Button from "../../components/buttons/Button.jsx"
 
 const aboutMe = [
     {
@@ -55,9 +56,30 @@ export default function About() {
                     
                 </div>
                 <div className={styles.buttons}>
-                    <div onClick={() => handleClick(0)} className={activeButton === 0 ? styles.activeButton : ""}>Background</div>
-                    <div onClick={() => handleClick(1)} className={activeButton === 1 ? styles.activeButton : ""}>Education</div>
-                    <div onClick={() => handleClick(2)} className={activeButton === 2 ? styles.activeButton : ""}>Technical Skills</div>
+                <Button 
+                        mode="text" 
+                        onHover="red" 
+                        onClick={() => handleClick(0)} 
+                        active={activeButton === 0}
+                    >
+                        Background
+                    </Button>
+                    <Button 
+                        mode="text" 
+                        onHover="red" 
+                        onClick={() => handleClick(1)} 
+                        active={activeButton === 1}
+                    >
+                        Education
+                    </Button>
+                    <Button 
+                        mode="text" 
+                        onHover="red" 
+                        onClick={() => handleClick(2)} 
+                        active={activeButton === 2}
+                    >
+                        Technical Skills
+                    </Button>
                 </div>
             </div>
         </div>

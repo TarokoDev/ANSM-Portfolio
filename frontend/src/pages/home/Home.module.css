@@ -9,11 +9,9 @@
     padding: 10px;
     box-sizing: border-box;
     background-color: whitesmoke;
-    /* background-color: #455C81; */
 }
 
 .component {
-    /* border: 2px solid black; */
     margin-top: 60px;
     height: 100%;
     width: 100%;
@@ -37,7 +35,6 @@
     left: 0;
     padding: 20px;
     box-sizing: border-box;
-    color: black;
     width: 100%;
 }
 
@@ -51,6 +48,7 @@
 }
 
 .textTop, .textBottom {
+    color: black;
     width: 100%;
 }
 
@@ -60,18 +58,8 @@
     align-items: flex-end;
     gap: 20px;
     font-size: 16px;
-    /* font-weight: bold; */
     margin-top: 10px;
     width: 100%;
-}
-
-.links a {
-    text-decoration: none;
-    color: black; 
-}
-
-.links a:hover {
-    color: red; 
 }
 
 /* Larger mobile screens */
@@ -115,18 +103,5 @@
 
     .textBottom {
         font-size: 30px;
-    }
-
-    .links a {
-        text-decoration: none;
-        color: black; 
-        scale: 1;
-        transition: scale 0.2s ease-in;  
-    }
-    
-    .links a:hover {
-        color: red; 
-        scale: 1.2;
-        transition: scale 0.2s ease-out;
     }
 }
