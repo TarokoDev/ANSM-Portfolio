@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link, Events, scrollSpy } from "react-scroll";
 import styles from "./Navbar.module.css";
+import logo from "./logo_black.png"
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function Navbar() {
-    React.useEffect(() => {
+    
+    useEffect(() => {
         Events.scrollEvent.register("begin", function () {
             console.log("begin", arguments);
         });
@@ -20,15 +24,37 @@ export default function Navbar() {
         };
     }, []);
 
+    const [menuOpen, setMenuOpen] = useState(false)
+    
+    function handleClick() {
+        console.log("Clicked!")
+        setMenuOpen(!menuOpen)
+        console.log(menuOpen)
+    }
+
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.component}>
                 <div className={styles.left}>
+                    <img src={logo}/>
                     <Link to="home" spy={true} smooth={true} duration={500}>
                         Austin Miranda
                     </Link>
                 </div>
-                <div className={styles.right}>
+
+                <div className={styles.rightMobile}>
+                    <button onClick={handleClick}>
+                        {
+                            menuOpen === true ? <CloseIcon/> : <MenuIcon />
+                        }
+                    </button>
+                </div>
+
+                <div className={`${styles.right} ${menuOpen? styles.showMenu : ''}`}>
                     <Link
                         activeClass={styles.active}
                         to="home"

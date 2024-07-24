@@ -28,6 +28,7 @@
     color: var(--text-color);
     padding: 5px;
     box-sizing: border-box;
+    justify-content: space-between;
 }
 
 .left {
@@ -36,48 +37,59 @@
     align-items: center;
     height: 100%;
     text-align: center;
-    width: 35%;
     margin-left: 10px;
+}
+
+.left img {
+    height: 60px;
     
-    
+}
+
+.left a {
+    cursor: pointer;
 }
 
 .right {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100%;
-    width: 65%;
-    gap: 10px;
-    margin-right: 10px;
+    display: none;
+
 }
 
+.rightMobile {
+    display: block;
+    margin-right: 10px;
 
-.component a {
-    text-decoration: none;
-    font-size: calc(12px + 0.5vw); 
-    line-height: 1;
+}
+
+.rightMobile button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.showMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.showMenu a {
+    padding: 10px;
     text-align: center;
 }
 
-/* Larger mobile screens */
-@media screen and (min-width: 407px) and (max-width: 479px) {
-
-    .left {
-        margin-left: 20px;
-    }
-
-    .right {
-        gap: 10px;
-        justify-content: flex-end;
-        margin-right: 10px;
-    }
-
-    .component a {
-        font-size: calc(12px + 0.75vw); 
-    }
+.active {
+    color: red;
 }
+
+
 
 /* Tablet and above */
 @media screen and (min-width: 480px) {
@@ -88,10 +100,35 @@
         align-items: center;
     }
 
+
     .right {
-        margin-right: 20px;
-        justify-content: flex-end;
+        display: flex;
+        align-items: center;
         gap: 20px;
+        margin-right: 20px;
+    }
+
+    .rightMobile {
+        display: none;
+    }
+
+    .showMenu {
+        position: static;
+        flex-direction: row;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .right a {
+        cursor: pointer;
+    }
+    
+    .component a {
+        text-decoration: none;
+        font-size: calc(12px + 0.5vw); 
+        line-height: 1;
+        text-align: center;
     }
 
     .component a {
