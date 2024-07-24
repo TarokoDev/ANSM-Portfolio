@@ -82,6 +82,15 @@ export default function Navbar() {
                     >
                         Projects
                     </Link>
+                    {/* <Link
+                        activeClass={styles.active}
+                        to="contact"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                    >
+                        Contact Me
+                    </Link> */}
                 </div>
             </div>
         </div>
