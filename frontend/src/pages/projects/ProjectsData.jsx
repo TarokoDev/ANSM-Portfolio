@@ -22,7 +22,7 @@ const data = [
             "CSS Modules", 
             "GitHub"
         ],
-        link: "Link to BudgetMaster (if available)"
+        link: "https://yab-v2-dev.netlify.app"
     },
     {
         title: "You Are Broke!",
