@@ -41,7 +41,7 @@ export default function Navbar() {
             <div className={styles.component}>
                 <div className={styles.left}>
                     <img src={logo}/>
-                    <Link to="home" spy={true} smooth={true} duration={500}>
+                    <Link to="home" spy={true} smooth={true} duration={500} >
                         Austin Miranda
                     </Link>
                 </div>

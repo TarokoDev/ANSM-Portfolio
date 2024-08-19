@@ -16,7 +16,7 @@ export default function Projects() {
                     <Project splineSrc={"https://prod.spline.design/PivuAol3Z3WfYQRU/scene.splinecode"} data={ProjectsData[3]} /> */}
                     {/* <Project splineSrc={"https://prod.spline.design/qSZymrbGSnd47ZSY/scene.splinecode"} data={ProjectsData[3]} /> */}
 
-                    <Project image={""} imageOrientation="portrait" data={ProjectsData[0]} />
+                    <Project image={"/BM-Home.png"} imageOrientation="portrait" data={ProjectsData[0]} />
                     <Project image={"/yab.png"} imageOrientation="landscape" data={ProjectsData[1]} />
                     <Project image={"/kimchinc.png"} imageOrientation="landscape" data={ProjectsData[2]} />
                     <Project image={"/js.png"} imageOrientation="portrait" data={ProjectsData[3]} />

@@ -1,7 +1,7 @@
 const data = [
     {
         title: "BudgetMaster",
-        summary: `BudgetMaster is a powerful budgeting application designed to help individuals manage their finances with precision. It provides tools for tracking income and expenses, categorizing transactions, and viewing financial history, all through an intuitive and user-friendly interface.`,
+        summary: `Take control of your finances with BudgetMaster, the all-in-one app designed to help you manage your money effortlessly. Whether you're budgeting for groceries, tracking your spending, or planning for future expenses, BudgetMaster provides the tools you need to stay on top of your finances. Perfect for individuals, families, or anyone looking to improve their financial health.`,
         keyFeatures: [
             <strong>Transaction Tracking</strong>,
             <>Log and categorize income and expenses effortlessly.</>,

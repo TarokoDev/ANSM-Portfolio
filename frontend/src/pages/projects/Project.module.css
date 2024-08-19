@@ -9,7 +9,6 @@ label {
 }
 
 
-
 .project {
     display: flex;
     flex-direction: column;
@@ -182,5 +181,6 @@ li {
         align-items: center;
         text-align: start;
         gap: 10px;
+        text-align: center;
     }
 }
