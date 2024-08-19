@@ -1,13 +1,8 @@
-/* Mobile Screen */
+/* General Styles */
 
-label {
-    font-size: clamp(1rem, 1rem + 1vw, 1rem);
+.webContainer {
+    display: none;
 }
-
-.buttons label {
-    font-size: clamp(0.7rem, 0.7rem + 1vw, 1rem);
-}
-
 
 .project {
     display: flex;
@@ -19,36 +14,27 @@ label {
     scroll-snap-align: start;
     padding: 5px;
     box-sizing: border-box;
-    /* background-color: aqua; */
 }
 
 .content {
+    position: relative; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; 
     height: 100%;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
     background-color: white;
     border-radius: 10px;
-    gap: 20px;
-
+    gap: 10px;
 }
 
-.project .splineContainer {
-    width: 100%;
-    height: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
 
 .project .imageContainer {
     width: 100%;
-    height: 100%;
+    height: 70%; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,26 +54,33 @@ label {
     object-fit: contain; 
 }
 
-.project .text {
+.project .header {
     width: 100%;
-    height: 60%;
-    text-align: center;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    gap: 5px;
-    box-sizing: border-box;
 }
 
+.shortSummary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
 
-
+.shortSummary label {
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #2c3e50;
+}
 
 .project .title {
     font-weight: 800;
     font-size: 1.5rem;
     text-align: left;
-    margin-bottom: 10px;
 }
 
 .project .description {
@@ -108,34 +101,43 @@ li {
     margin-bottom: 10px;
 }
 
-.buttons div {
-    cursor: pointer;
-    scale: 1;
-    transition: scale 0.2s ease-in, background-color 0.2s ease-in;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.buttons div:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    scale: 1.05;
-}
-
-
 .buttons {
     width: 100%;
-    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    gap: 10px;
+}
+
+.buttons .button {
     width: 100%;
 }
 
-.visitButton {
+/* More info styles */
+.closeButton {
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    box-sizing: border-box;
-    bottom: 0px;
+    justify-content: flex-end  ;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
 }
 
 /* Media Queries */
@@ -162,9 +164,22 @@ li {
 @media screen and (min-width: 480px) {
 
     .content {
+        display: none;
+    }
+
+    .webContainer {
+        position: relative; 
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-between; 
+        height: 100%;
         width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: white;
+        border-radius: 10px;
+        gap: 10px;
     }
 
     .project .imageContainer {
@@ -172,8 +187,8 @@ li {
         height: 90%;
     }
 
-    .project .text {
-        height: 100%;
+    .project .textContainer {
+        height: 90%;
         width: 40%;
         display: flex;
         flex-direction: column;
@@ -182,5 +197,9 @@ li {
         text-align: start;
         gap: 10px;
         text-align: center;
+    }
+
+    .button {
+        width: 100%;
     }
 }

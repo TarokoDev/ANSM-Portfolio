@@ -1,6 +1,7 @@
 const data = [
     {
         title: "BudgetMaster",
+        shortSummary: "Take control of your finances with BudgetMaster",
         summary: `Take control of your finances with BudgetMaster, the all-in-one app designed to help you manage your money effortlessly. Whether you're budgeting for groceries, tracking your spending, or planning for future expenses, BudgetMaster provides the tools you need to stay on top of your finances. Perfect for individuals, families, or anyone looking to improve their financial health.`,
         keyFeatures: [
             <strong>Transaction Tracking</strong>,
@@ -26,6 +27,7 @@ const data = [
     },
     {
         title: "You Are Broke!",
+        shortSummary: "Streamline personal finance management with You Are Broke! across mobile and web.",
         summary: `You Are Broke! (YAB) is a comprehensive finance tracker and budgeting management application designed to streamline personal financial management across both mobile and web platforms. The app offers seamless account registration, detailed finance tracking, and efficient budget allocation, empowering users to gain full control over their finances.`,
         keyFeatures: [
             <strong>Cross-Platform Accessibility</strong>,
@@ -52,6 +54,7 @@ const data = [
     },
     {
         title: "Kimchinc",
+        shortSummary: "Coordinate hospital deliveries efficiently with Kimchinc.",
         summary: "Kimchinc is a delivery coordination system for Hospitals. Designed for mobile and web platforms.",
         keyFeatures: [
             <strong>Efficient Delivery Coordination</strong>,
@@ -78,6 +81,7 @@ const data = [
     },
     {
         title: "Pop's Picks",
+        shortSummary: "Effortlessly explore, search, and track Jason Statham movies.",
         summary: "Made for my dad, effortlessly explore, search and track Jason Statham movies, and other movies, with detailed views and a one-click download request feature for convenient movie nights. Designed for iOS.",
         keyFeatures: [
             <strong>Custom Movie Database</strong>,
@@ -101,6 +105,7 @@ const data = [
     },
     {
         title: "Portfolio",
+        shortSummary: "Explore my journey and showcase of skills in this interactive portfolio.",
         summary: "Portfoliooooception? Explore my Journey.",
         keyFeatures: [
             <strong>Showcase of Skills</strong>,

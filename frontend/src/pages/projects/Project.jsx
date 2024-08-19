@@ -1,12 +1,14 @@
 import { useState } from "react";
 import styles from './Project.module.css';
-import Spline from '@splinetool/react-spline';
 import Button from "../../components/buttons/Button.jsx"
 
-// function Project({ splineSrc, data}) {
-function Project({ image, imageOrientation, data}) {
-    const [activeButton, setActiveButton] = useState("summary")
+// Icons
+import CloseIcon from '@mui/icons-material/Close';
+
+function Project({ image, imageOrientation, data }) {
+    const [activeButton, setActiveButton] = useState("summary");
     const [description, setDescription] = useState(data.summary);
+    const [active, setActive] = useState(true);
 
     function handleClick(index) {
         setActiveButton(index);
@@ -31,68 +33,152 @@ function Project({ image, imageOrientation, data}) {
         }
     }
 
+    function handleLearnMore() {
+        setActive(!active);
+    }
+
+    function handleCloseInfo() {
+        setActive(!active);
+    }
+
+    const homeState = (
+        <>
+            <div className={styles.imageContainer}>
+                <img src={image} className={imageOrientation === "landscape" ? styles.landscape : styles.portrait} alt={data.title} />
+            </div>
+            <div className={styles.header}>
+                <label className={styles.title}>{data.title}</label>
+            </div>
+            <div className={styles.shortSummary}>
+                <label>{data.shortSummary}</label>
+            </div>
+            <div className={styles.buttons}>
+                <div className={styles.button}>
+                    {data.link === "Work in progress" ? (
+                        <Button mode="filled" onHover="black">Work in Progress</Button>
+                    ) : (
+                        <Button mode="filled" onHover="black" link={data.link}>Visit</Button>
+                    )}
+                </div>
+                <div className={styles.button}>
+                    {active ? (
+                        <Button mode="filled" onHover="black" onClick={handleLearnMore}>Learn More</Button>
+                    ) : (
+                        <Button mode="filled" onHover="black" >Go Back</Button>
+                    )}
+                </div>
+            </div>
+        </>
+    );
+
+    const learnMoreState = (
+        <>
+            <div className={styles.closeButton}>
+                <CloseIcon onClick={handleCloseInfo} />
+            </div>
+
+            <div className={styles.details}>
+                <label className={styles.title}>
+                    {data.title}
+                </label>
+                <label className={styles.description}>
+                    {description}
+                </label>
+            </div>
+
+            <div className={styles.buttons}>
+                <Button
+                    mode="text"
+                    onHover="red"
+                    onClick={() => handleClick("summary")}
+                    active={activeButton === "summary"}
+                >
+                    <label>
+                        Summary
+                    </label>
+                </Button>
+                <Button
+                    mode="text"
+                    onHover="red"
+                    onClick={() => handleClick("keyFeatures")}
+                    active={activeButton === "keyFeatures"}
+                >
+                    <label>
+                        Features
+                    </label>
+                </Button>
+                <Button
+                    mode="text"
+                    onHover="red"
+                    onClick={() => handleClick("techStack")}
+                    active={activeButton === "techStack"}
+                >
+                    <label>
+                        Tech Stack
+                    </label>
+                </Button>
+            </div>
+        </>
+    );
+
+    const webState = (
+        <>
+            <div className={styles.imageContainer}>
+                <img src={image} className={imageOrientation === "landscape" ? styles.landscape : styles.portrait} alt={data.title} />
+            </div>
+            <div className={styles.textContainer}>
+                <label className={styles.title}>{data.title}</label>
+                <label className={styles.description}>{description}</label>
+                <div className={styles.buttons}>
+                    <Button
+                        mode="text"
+                        onHover="red"
+                        onClick={() => handleClick("summary")}
+                        active={activeButton === "summary"}
+                    >
+                        <label>
+                            Summary
+                        </label>
+                    </Button>
+                    <Button
+                        mode="text"
+                        onHover="red"
+                        onClick={() => handleClick("keyFeatures")}
+                        active={activeButton === "keyFeatures"}
+                    >
+                        <label>
+                            Features
+                        </label>
+                    </Button>
+                    <Button
+                        mode="text"
+                        onHover="red"
+                        onClick={() => handleClick("techStack")}
+                        active={activeButton === "techStack"}
+                    >
+                        <label>
+                            Tech Stack
+                        </label>
+                    </Button>
+                </div>
+                <div className={styles.button}>
+                    {data.link === "Work in progress" ? (
+                        <Button mode="filled" onHover="black">Work in Progress</Button>
+                    ) : (
+                        <Button mode="filled" onHover="black" link={data.link}>Visit</Button>
+                    )}
+                </div>
+            </div>
+        </>
+    );
+
     return (
         <div className={styles.project}>
             <div className={styles.content}>
-                {/* <div className={styles.splineContainer}>
-                    <Spline scene={splineSrc} />
-                    
-                </div> */}
-                <div className={styles.imageContainer}>
-                    <img src={image} className={imageOrientation === "landscape" ? styles.landscape : styles.portrait}/>
-                </div>
-                <div className={styles.text}>
-                    <label className={styles.title}>
-                        {data.title}
-                    </label>
-                    <label className={styles.description}>
-                        {description}
-                    </label>
-                    <div className={styles.buttons}>
-
-                        <Button 
-                            mode="text" 
-                            onHover="red" 
-                            onClick={() => handleClick("summary")} 
-                            active={activeButton === "summary"}
-                        >
-                            <label>
-                                Summary
-                            </label>
-                        </Button>
-                        <Button 
-                            mode="text" 
-                            onHover="red" 
-                            onClick={() => handleClick("keyFeatures")} 
-                            active={activeButton === "keyFeatures"}
-                        >
-                            <label>
-                                Features
-                            </label>
-                        </Button>
-                        <Button 
-                            mode="text" 
-                            onHover="red" 
-                            onClick={() => handleClick("techStack")} 
-                            active={activeButton === "techStack"}
-                        >
-                            <label>
-                                Tech Stack
-                            </label>
-                        </Button>
-                        
-                    </div>
-                    <div className={styles.visitButton}>
-                        {
-                            data.link === "Work in progress" ? (
-                                <Button mode="filled" onHover="black">Work in Progress</Button>
-                            ) : (
-                                <Button mode="filled" onHover="black" link={data.link}>Visit</Button>
-                            )
-                        }
-                        
-                    </div>
-                </div>
+                {active ? homeState : learnMoreState}
+            </div>
+            <div className={styles.webContainer}>
+                {webState}
             </div>
         </div>
     );
