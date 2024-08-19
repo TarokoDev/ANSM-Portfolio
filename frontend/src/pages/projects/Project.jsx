@@ -3,7 +3,8 @@ import styles from './Project.module.css';
 import Spline from '@splinetool/react-spline';
 import Button from "../../components/buttons/Button.jsx"
 
-function Project({ splineSrc, data}) {
+// function Project({ splineSrc, data}) {
+function Project({ image, imageOrientation, data}) {
     const [activeButton, setActiveButton] = useState("summary")
     const [description, setDescription] = useState(data.summary);
 
@@ -33,14 +34,20 @@ function Project({ splineSrc, data}) {
     return (
         <div className={styles.project}>
             <div className={styles.content}>
-                <Spline scene={splineSrc} />
+                {/* <div className={styles.splineContainer}>
+                    <Spline scene={splineSrc} />
+                    
+                </div> */}
+                <div className={styles.imageContainer}>
+                    <img src={image} className={imageOrientation === "landscape" ? styles.landscape : styles.portrait}/>
+                </div>
                 <div className={styles.text}>
-                    <div className={styles.title}>
+                    <label className={styles.title}>
                         {data.title}
-                    </div>
-                    <div className={styles.description}>
+                    </label>
+                    <label className={styles.description}>
                         {description}
-                    </div>
+                    </label>
                     <div className={styles.buttons}>
 
                         <Button 
@@ -49,7 +56,9 @@ function Project({ splineSrc, data}) {
                             onClick={() => handleClick("summary")} 
                             active={activeButton === "summary"}
                         >
-                            Summary
+                            <label>
+                                Summary
+                            </label>
                         </Button>
                         <Button 
                             mode="text" 
@@ -57,7 +66,9 @@ function Project({ splineSrc, data}) {
                             onClick={() => handleClick("keyFeatures")} 
                             active={activeButton === "keyFeatures"}
                         >
-                            Features
+                            <label>
+                                Features
+                            </label>
                         </Button>
                         <Button 
                             mode="text" 
@@ -65,7 +76,9 @@ function Project({ splineSrc, data}) {
                             onClick={() => handleClick("techStack")} 
                             active={activeButton === "techStack"}
                         >
-                            Technologies
+                            <label>
+                                Tech Stack
+                            </label>
                         </Button>
                         
                     </div>

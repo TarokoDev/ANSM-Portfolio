@@ -1,12 +1,20 @@
- /* Mobile Screen */
+/* General Styles */
 .container {
-    height: 100dvh; 
-    width: 100%;
+    height: 100dvh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     padding: 10px;
     box-sizing: border-box;
-    background-color: whitesmoke;
+    background: whitesmoke
+}
+
+label {
+    font-size: clamp(1rem, 1rem + 1vw, 1rem);
+}
+
+.buttons label {
+    font-size: clamp(0.6rem, 0.6rem + 1vw, 1rem);
 }
 
 .component {
@@ -18,12 +26,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    border: 5px solid black;
     padding: 10px;
     box-sizing: border-box;
-    background-color: whitesmoke;
+    background: white;
+    border-radius: 10px;
     overflow-y: auto;
-    
 }
 
 .content {
@@ -32,21 +39,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
 }
 
 .title {
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .description {
-    font-size: 20px;
+    font-size: 1rem;
+    color: #555;
 }
 
 .description li {
     list-style-type: none;
     padding-left: 0;
     margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 .buttons {
@@ -56,25 +68,24 @@
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
-/* Larger mobile screens */
-@media screen and (min-width: 407px) and (max-width: 479px) {
-
+.buttons div {
+    cursor: pointer;
+    scale: 1;
+    transition: scale 0.2s ease-in, background-color 0.2s ease-in;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-/* Tablet and above */
+.buttons div:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    scale: 1.05;
+}
+
+/* Larger screens */
 @media screen and (min-width: 480px) {
-
     .content {
         width: 80%;
     }
-
-    .buttons div {
-        cursor: pointer;
-        scale: 1;
-        transition: scale 0.2s ease-in ;
-    }
-
 }
