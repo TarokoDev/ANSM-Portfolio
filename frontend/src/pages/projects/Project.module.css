@@ -79,7 +79,6 @@ label {
     align-items: center;
     gap: 5px;
     box-sizing: border-box;
-
 }
 
 
@@ -110,6 +109,19 @@ li {
     margin-bottom: 10px;
 }
 
+.buttons div {
+    cursor: pointer;
+    scale: 1;
+    transition: scale 0.2s ease-in, background-color 0.2s ease-in;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.buttons div:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    scale: 1.05;
+}
+
 
 .buttons {
     width: 100%;
@@ -122,6 +134,8 @@ li {
 }
 
 .visitButton {
+    width: 100%;
+    box-sizing: border-box;
     bottom: 0px;
 }
 
