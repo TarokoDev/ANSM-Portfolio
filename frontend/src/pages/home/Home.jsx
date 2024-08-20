@@ -40,12 +40,13 @@ export default function Home() {
                             <div className={styles.textBottom}>
                                 <div>Full-stack developer</div>
                             </div>
+                            <div className={styles.links}>
+                                <Button mode="text" onHover="red" link="https://github.com/TarokoDev">Github</Button>
+                                <Button mode="text" onHover="red" link="https://www.linkedin.com/in/austin-miranda">LinkedIn</Button>
+                                <Button mode="text" onHover="red" link="/resume.pdf" downloadName="Austin Miranda - Resume 2024.pdf">Resume</Button>
+                            </div>
                         </div>
-                        <div className={styles.links}>
-                            <Button mode="text" onHover="red" link="https://github.com/TarokoDev">Github</Button>
-                            <Button mode="text" onHover="red" link="https://www.linkedin.com/in/austin-miranda">LinkedIn</Button>
-                            <Button mode="text" onHover="red" link="/resume.pdf" downloadName="Austin Miranda - Resume 2024.pdf">Resume</Button>
-                        </div>
+                        
                     </div>
                 )}
             </div>

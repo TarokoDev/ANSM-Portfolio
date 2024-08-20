@@ -12,7 +12,7 @@ const aboutMe = [
                 "With a product design background, I’ve always been passionate about creating and designing.", 
                 "Transitioning into Full Stack development, I now channel my creativity and problem-solving into modern, dynamic web applications.",
                 "I’m particularly passionate about front-end development, test-driven development, and enhancing user experiences."
-        ]
+            ]
     },
     {
         // icon: <IoIosSchool size={24} />,
@@ -30,13 +30,24 @@ const aboutMe = [
             "React JS, HTML, CSS, JavaScript, React-Native, Tailwind CSS, BootStrap, Vite, Expo",
             "",
             <strong>Backend</strong>,
-            "Node.js, Express, MongoDB, MySQL",
+            "Node.js, Express, MongoDB, MySQL, Axios, JWT, RESTful APIs",
             "",
             <strong>Languages</strong>,
             "Python, Javascript, Java, C++",
             "",
-            <strong>Tools</strong>,
-            "Git, Github, Figma, Adobe XD, Spline, Cypress, Postman, Netlify, Render, OpenAI ChatGPT, npm, XCode Simulator"
+            <strong>Testing</strong>,
+            "Cypress",
+            "",
+            <strong>CI/CD</strong>,
+            "Netlify, Render, Github",
+            <strong>Version Control</strong>,
+            "Git, Github",
+            "",
+            <strong>Design Tools & Prototyping</strong>,
+            "Figma, Adobe XD, Adobe Illustrator, Canva, Spline",
+            "",
+            <strong>Additional Tools</strong>,
+            "OpenAI ChatGPT, XCode Simulator, Postman, npm, Docker"
         ]
     }
 ];
@@ -69,7 +80,8 @@ export default function About() {
                         )}
                     </label>
                 </div>
-                <div className={styles.buttons}>
+            </div>
+            <div className={styles.buttons}>
                     {aboutMe.map((item, index) => (
                         <Button
                             key={index}
@@ -83,7 +95,6 @@ export default function About() {
                         </Button>
                     ))}
                 </div>
-            </div>
         </div>
     );
 }

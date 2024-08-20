@@ -6,7 +6,8 @@
     flex-direction: column;
     padding: 10px;
     box-sizing: border-box;
-    background: whitesmoke
+    background: whitesmoke;
+    gap: 10px;
 }
 
 label {
@@ -50,8 +51,13 @@ label {
 }
 
 .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     font-size: 1rem;
     color: #555;
+    overflow-y: auto;
 }
 
 .description li {
@@ -68,6 +74,12 @@ label {
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.buttons div {
+    color: white;
 }
 
 .buttons div {

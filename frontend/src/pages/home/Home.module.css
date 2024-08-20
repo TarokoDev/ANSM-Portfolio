@@ -44,22 +44,40 @@
     align-items: flex-start;
     font-size: 30px;
     font-weight: bold;
-    width: 100%;
+    background-color: rgba(226, 226, 226, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    width: auto; /* Allow width to be determined by the content */
+    max-width: 90%; /* Optional: Limit the maximum width */
+    margin: 0 auto; /* Center the header within its parent */
 }
 
 .textTop, .textBottom {
-    color: black;
+    color: #333;
     width: 100%;
+}
+
+.textBottom {
+    font-size: 20px;
 }
 
 .links {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
-    font-size: 16px;
+    font-size: 0.8rem;
     margin-top: 10px;
+    height: 30px;
     width: 100%;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.links a {
+    color: white;
+    
 }
 
 /* Larger mobile screens */
@@ -67,41 +85,41 @@
 
 }
 
-/* Tablet and above */
 @media screen and (min-width: 480px) {
-    .container {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        box-sizing: border-box;
-        background-color: whitesmoke;
-    }
-
-    .component {
-        position: relative;
-        margin-top: 60px;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .header {
+        width: auto; /* Allow auto-sizing */
     }
 
     .text {
         padding: 80px;
         box-sizing: border-box;
+        
+    }
+
+    .textTop, .textBottom {
+        color: #333;
     }
 
     .textTop {
-        font-size: 70px;
+        font-size: 2rem;
     }
 
     .textBottom {
         font-size: 30px;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        font-size: 16px;
+        margin-top: 10px;
+        height: 30px;
+        width: auto;
+        background-color: #333;
+        border-radius: 10px;
+        padding: 10px;
     }
 }
