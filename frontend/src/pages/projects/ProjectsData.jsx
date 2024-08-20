@@ -16,12 +16,24 @@ const data = [
             <>Easily update or remove transactions with warnings to prevent accidental deletions.</>
         ],
         techStack: [
-            "React", 
-            "Node.js", 
-            "Express", 
-            "MongoDB", 
-            "CSS Modules", 
-            "GitHub"
+            <strong>Frontend</strong>,
+            "React, HTML, CSS, JavaScript, Vite",
+            "",
+            <strong>Backend</strong>,
+            "Node.js, Express, MongoDB, Axios",
+            "",
+            <strong>CI/CD</strong>,
+            "GitHub, Netlify, Render",
+            "",
+            <strong>Testing</strong>,
+            "Cypress",
+            "",
+            <strong>Security</strong>,
+            "JSON Web Tokens (JWT), Bcrypt",
+            "",
+            <strong>Additional Tools</strong>,
+            "Xcode iOS Simulator, Chrome Developer Tools",
+            
         ],
         link: "https://yab-v2-dev.netlify.app"
     },
@@ -42,13 +54,23 @@ const data = [
             <>Built with MongoDB, Express, React, Node.js, and Vite, leveraging the strengths of each technology for a cohesive user experience.</>
         ],
         techStack: [
-            "MongoDB", 
-            "Express", 
-            "React", 
-            "Node.JS", 
-            "Vite", 
-            "Netlify", 
-            "Render"
+            <strong>Frontend</strong>,
+            "React, HTML, CSS, JavaScript, Vite",
+            "",
+            <strong>Backend</strong>,
+            "Node.js, Express, MongoDB, Axios",
+            "",
+            <strong>CI/CD</strong>,
+            "GitHub, Netlify, Render",
+            "",
+            <strong>Testing</strong>,
+            "Cypress",
+            "",
+            <strong>Security</strong>,
+            "JSON Web Tokens (JWT), Bcrypt",
+            "",
+            <strong>Additional Tools</strong>,
+            "Xcode iOS Simulator, Chrome Developer Tools",
         ],
         link: "https://youarebroke.netlify.app"
     },
@@ -69,13 +91,23 @@ const data = [
             <>Integrates with existing hospital systems for smooth operation.</>
         ],
         techStack: [
-            "MongoDB", 
-            "Express", 
-            "React", 
-            "Node.JS", 
-            "Tailwind CSS", 
-            "Netlify", 
-            "Render"
+            <strong>Frontend</strong>,
+            "React, HTML, CSS, JavaScript, TailwindCSS",
+            "",
+            <strong>Backend</strong>,
+            "Node.js, Express, MongoDB, RESTful API",
+            "",
+            <strong>CI/CD</strong>,
+            "GitHub, Netlify, Render",
+            "",
+            <strong>Testing</strong>,
+            "Manual Testing",
+            "",
+            <strong>Security</strong>,
+            "JSON Web Tokens (JWT), Bcrypt",
+            "",
+            <strong>Additional Tools</strong>,
+            "Xcode iOS Simulator, Chrome Developer Tools",
         ],
         link: "https://kimchinc.netlify.app"
     },
@@ -96,10 +128,11 @@ const data = [
             <>Optimized for iOS devices using React Native and Expo.</>
         ],
         techStack: [
-            "React Native", 
-            "iOS", 
-            "Expo", 
-            "Javascript"
+            <strong>Frontend</strong>,
+            "React Native, Expo, JavaScript",
+            "",
+            <strong>Additional Tools</strong>,
+            "TMDB API, Xcode iOS Simulator, Chrome Developer Tools",
         ],
         link: "Work in progress"
     },
@@ -120,12 +153,14 @@ const data = [
             <>Utilizes React, HTML, CSS, JavaScript, and Vite for a robust and modern web application.</>
         ],
         techStack: [
-            "React", 
-            "HTML", 
-            "CSS", 
-            "Javascript", 
-            "Vite", 
-            "Netlify"
+            <strong>Frontend</strong>,
+            "React, HTML, CSS, JavaScript",
+            "",
+            <strong>CI/CD</strong>,
+            "GitHub, Netlify, Render",
+            "",
+            <strong>Additional Tools</strong>,
+            "Xcode iOS Simulator, Chrome Developer Tools",
         ],
         link: "https://austinmiranda.netlify.app"
     }
