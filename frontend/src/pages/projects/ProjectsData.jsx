@@ -35,7 +35,7 @@ const data = [
             "Xcode iOS Simulator, Chrome Developer Tools",
             
         ],
-        link: "https://yab-v2-dev.netlify.app"
+        link: "https://budgetmasterdev.netlify.app"
     },
     {
         title: "You Are Broke!",
