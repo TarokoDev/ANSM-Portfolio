@@ -1,5 +1,36 @@
 const data = [
     {
+        title: "TarokoTodo",
+        shortSummary: "A dynamic todo app with score tracking and localStorage support.",
+        summary: `This todo app is designed to practice core React concepts and Fundamentals of HTML/CSS/javascript, such as component architecture, state management with hooks, and the use of localStorage for persistent data. It includes features like score tracking for completed tasks, input limitations, and an info page, providing a well-rounded user experience.`,
+        keyFeatures: [
+            <strong>Todo Management</strong>,
+            <>Add, complete, and delete todos to keep track of your tasks.</>,
+            <strong>Score Tracking</strong>,
+            <>Keep track of completed tasks with a score system to encourage productivity.</>,
+            <strong>LocalStorage Persistence</strong>,
+            <>All todos and scores are saved to localStorage to retain state across browser sessions.</>,
+            <strong>Input Limitation</strong>,
+            <>Prevent adding more than a set limit of todos and handle input dynamically.</>,
+            <strong>Designed for Mobile and Web Browsers</strong>,
+            <>Optimized for both mobile and web browsers, ensuring a responsive experience across devices. Dynamically manage input limitations, including preventing more than a set limit of todos.</>,
+            <strong>Info Page</strong>,
+            <>Display additional information and links to the creator's portfolio via an integrated info page.</>
+        ],
+        techStack: [
+            <strong>Frontend</strong>,
+            "React, HTML, CSS, JavaScript, Vite, localStorage",
+            "",
+            <strong>CI/CD</strong>,
+            "GitHub, Netlify",
+            "",
+            <strong>Additional Tools</strong>,
+            "Xcode iOS Simulator, Chrome Developer Tools",
+            
+        ],
+        link: "https://tarokotodo.netlify.app"
+    },
+    {
         title: "BudgetMaster",
         shortSummary: "Take control of your finances with BudgetMaster",
         summary: `Take control of your finances with BudgetMaster, the all-in-one app designed to help you manage your money effortlessly. Whether you're budgeting for groceries, tracking your spending, or planning for future expenses, BudgetMaster provides the tools you need to stay on top of your finances. Perfect for individuals, families, or anyone looking to improve their financial health.`,
