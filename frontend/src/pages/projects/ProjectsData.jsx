@@ -78,12 +78,12 @@ const data = [
             <strong>Info Page</strong>,
             <>
                 Display additional information and links to the creator's
-                portfolio via an integrated info page.
+                portfolio and development updates via an integrated info page.
             </>,
         ],
         techStack: [
             <strong>Frontend</strong>,
-            "React, HTML, CSS, JavaScript, Vite, localStorage",
+            "React, HTML, Tailwind CSS, JavaScript, Next.JS, localStorage",
             "",
             <strong>CI/CD</strong>,
             "GitHub, Netlify",
