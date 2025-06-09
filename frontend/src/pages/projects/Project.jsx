@@ -57,7 +57,7 @@ function Project({ image, imageOrientation, data }) {
                     {data.link === "Work in progress" ? (
                         <Button mode="filled" onHover="black">Work in Progress</Button>
                     ) : (
-                        <Button mode="filled" c onHover="black" link={data.link}>Visit</Button>
+                        <Button mode="filled" onHover="black" link={data.link}>Visit</Button>
                     )}
                 </div>
                 <div className={styles.button}>
