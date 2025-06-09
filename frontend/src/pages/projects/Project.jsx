@@ -61,11 +61,9 @@ function Project({ image, imageOrientation, data }) {
                     )}
                 </div>
                 <div className={styles.button}>
-                    {active ? (
-                        <Button mode="filled" onHover="black" onClick={handleLearnMore}>Learn More</Button>
-                    ) : (
-                        <Button mode="filled" onHover="black" >Go Back</Button>
-                    )}
+                    <Button mode="filled" onHover="black" onClick={handleLearnMore}>
+                        Learn More
+                    </Button>
                 </div>
             </div>
         </>
