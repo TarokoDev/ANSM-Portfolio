@@ -9,11 +9,11 @@ export default function Navbar() {
     
     useEffect(() => {
         Events.scrollEvent.register("begin", function () {
-            console.log("begin", arguments);
+            // console.log("begin", arguments);
         });
 
         Events.scrollEvent.register("end", function () {
-            console.log("end", arguments);
+            // console.log("end", arguments);
         });
 
         scrollSpy.update();
@@ -27,9 +27,9 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false)
     
     function handleClick() {
-        console.log("Clicked!")
+        // console.log("Clicked!")
         setMenuOpen(!menuOpen)
-        console.log(menuOpen)
+        // console.log(menuOpen)
     }
 
     const closeMenu = () => {
