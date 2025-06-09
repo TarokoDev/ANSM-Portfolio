@@ -8,11 +8,11 @@ import CloseIcon from "@mui/icons-material/Close";
 export default function Navbar() {
     useEffect(() => {
         Events.scrollEvent.register("begin", function () {
-            console.log("begin", arguments);
+            // console.log("begin", arguments);
         });
 
         Events.scrollEvent.register("end", function () {
-            console.log("end", arguments);
+            // console.log("end", arguments);
         });
 
         scrollSpy.update();
@@ -26,9 +26,7 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     function handleClick() {
-        console.log("Clicked!");
-        setMenuOpen(!menuOpen);
-        console.log(menuOpen);
+        setMenuOpen(!menuOpen)
     }
 
     const closeMenu = () => {
