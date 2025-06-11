@@ -16,7 +16,9 @@ function Project({ image, imageOrientation, data }) {
             setDescription(
                 <ul className={styles.list}>
                     {data.keyFeatures.map((feature, idx) => (
-                        <li key={idx}>{feature}</li>
+                        <li key={idx}>
+                            <strong>{feature.title}</strong> {feature.description}
+                        </li>
                     ))}
                 </ul>
             );
@@ -24,7 +26,9 @@ function Project({ image, imageOrientation, data }) {
             setDescription(
                 <ul className={styles.list}>
                     {data.techStack.map((tech, idx) => (
-                        <li key={idx}>{tech}</li>
+                        <li key={idx}>
+                            <strong>{tech.title}</strong> {tech.description}
+                        </li>
                     ))}
                 </ul>
             );
