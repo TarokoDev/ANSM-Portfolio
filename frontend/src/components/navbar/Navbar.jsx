@@ -7,13 +7,9 @@ import CloseIcon from "@mui/icons-material/Close";
 
 export default function Navbar() {
     useEffect(() => {
-        Events.scrollEvent.register("begin", function () {
-            // console.log("begin", arguments);
-        });
+        Events.scrollEvent.register("begin", function () {});
 
-        Events.scrollEvent.register("end", function () {
-            // console.log("end", arguments);
-        });
+        Events.scrollEvent.register("end", function () {});
 
         scrollSpy.update();
 
