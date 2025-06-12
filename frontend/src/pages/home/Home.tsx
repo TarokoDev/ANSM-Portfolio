@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import styles from './Home.module.css';
 import Spline from '@splinetool/react-spline';
 import { ClimbingBoxLoader } from 'react-spinners';
-import Button from '../../components/buttons/Button.jsx';
-import { homeData } from './HomeData.js';
+import Button from '../../components/buttons/Button.tsx';
+import { homeData } from './HomeData.ts';
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);

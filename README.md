@@ -1,6 +1,6 @@
 # ANSM Portfolio
 
-This repository contains the code for a personal portfolio website. The React source for the site lives in the `frontend/` directory, which was bootstrapped with Vite.
+This repository contains the code for a personal portfolio website. The React + TypeScript source for the site lives in the `frontend/` directory, which was bootstrapped with Vite.
 
 ## Getting Started
 

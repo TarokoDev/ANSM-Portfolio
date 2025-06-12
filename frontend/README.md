@@ -1,6 +1,6 @@
 # ANSM Portfolio Frontend
 
-This directory contains the React frontend built with Vite.
+This directory contains the React frontend built with Vite and TypeScript.
 
 ## Setup
 

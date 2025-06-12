@@ -2,7 +2,18 @@ import React from 'react';
 import styles from "./Button.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Button({ children, mode, icon, onHover, link, downloadName, onClick, active }) {
+interface ButtonProps {
+    children: React.ReactNode;
+    mode?: "filled" | "outline" | "text";
+    icon?: any;
+    onHover?: "red" | "black";
+    link?: string;
+    downloadName?: string;
+    onClick?: () => void;
+    active?: boolean;
+}
+
+function Button({ children, mode, icon, onHover, link, downloadName, onClick, active }: ButtonProps) {
     let buttonClass = '';
     let iconClass = <FontAwesomeIcon icon={icon} />
     let hoverClass = '';
