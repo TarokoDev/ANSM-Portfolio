@@ -1,7 +1,7 @@
 import styles from "./About.module.css";
 import { useState } from "react";
-import Button from "../../components/buttons/Button.jsx";
-import { aboutData } from "./AboutData.js";
+import Button from "../../components/buttons/Button.tsx";
+import { aboutData } from "./AboutData.ts";
 
 export default function About() {
     const [activeButton, setActiveButton] = useState(0);

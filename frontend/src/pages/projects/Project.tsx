@@ -1,11 +1,17 @@
 import { useState } from "react";
 import styles from './Project.module.css';
-import Button from "../../components/buttons/Button.jsx"
+import Button from "../../components/buttons/Button.tsx"
 
 // Icons
 import CloseIcon from '@mui/icons-material/Close';
 
-function Project({ image, imageOrientation, data }) {
+interface ProjectProps {
+    image: string;
+    imageOrientation: string;
+    data: any;
+}
+
+function Project({ image, imageOrientation, data }: ProjectProps) {
     const [activeButton, setActiveButton] = useState("summary");
     const [description, setDescription] = useState(data.summary);
     const [active, setActive] = useState(true);

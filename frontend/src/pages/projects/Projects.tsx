@@ -1,6 +1,6 @@
-import Project from "./Project.jsx";
+import Project from "./Project.tsx";
 import styles from "./Projects.module.css";
-import ProjectsData from "./ProjectsData.jsx";
+import ProjectsData from "./ProjectsData.ts";
 
 export default function Projects() {
     return (
