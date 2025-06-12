@@ -16,7 +16,9 @@ function Project({ image, imageOrientation, data }) {
             setDescription(
                 <ul className={styles.list}>
                     {data.keyFeatures.map((feature, idx) => (
-                        <li key={idx}>{feature}</li>
+                        <li key={idx}>
+                            <strong>{feature.title}</strong> {feature.description}
+                        </li>
                     ))}
                 </ul>
             );
@@ -24,7 +26,9 @@ function Project({ image, imageOrientation, data }) {
             setDescription(
                 <ul className={styles.list}>
                     {data.techStack.map((tech, idx) => (
-                        <li key={idx}>{tech}</li>
+                        <li key={idx}>
+                            <strong>{tech.title}</strong> {tech.description}
+                        </li>
                     ))}
                 </ul>
             );
@@ -57,15 +61,13 @@ function Project({ image, imageOrientation, data }) {
                     {data.link === "Work in progress" ? (
                         <Button mode="filled" onHover="black">Work in Progress</Button>
                     ) : (
-                        <Button mode="filled" c onHover="black" link={data.link}>Visit</Button>
+                        <Button mode="filled" onHover="black" link={data.link}>Visit</Button>
                     )}
                 </div>
                 <div className={styles.button}>
-                    {active ? (
-                        <Button mode="filled" onHover="black" onClick={handleLearnMore}>Learn More</Button>
-                    ) : (
-                        <Button mode="filled" onHover="black" >Go Back</Button>
-                    )}
+                    <Button mode="filled" onHover="black" onClick={handleLearnMore}>
+                        Learn More
+                    </Button>
                 </div>
             </div>
         </>
