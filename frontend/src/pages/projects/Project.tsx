@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styles from './Project.module.css';
 import Button from "../../components/buttons/Button.tsx"
 
 // Icons
@@ -20,7 +19,7 @@ function Project({ image, imageOrientation, data }: ProjectProps) {
         setActiveButton(index);
         if (index === "keyFeatures") {
             setDescription(
-                <ul className={styles.list}>
+                <ul className="text-center">
                     {data.keyFeatures.map((feature, idx) => (
                         <li key={idx}>
                             <strong>{feature.title}</strong> {feature.description}
@@ -30,7 +29,7 @@ function Project({ image, imageOrientation, data }: ProjectProps) {
             );
         } else if (index === "techStack") {
             setDescription(
-                <ul className={styles.list}>
+                <ul className="text-center">
                     {data.techStack.map((tech, idx) => (
                         <li key={idx}>
                             <strong>{tech.title}</strong> {tech.description}
@@ -53,24 +52,24 @@ function Project({ image, imageOrientation, data }: ProjectProps) {
 
     const homeState = (
         <>
-            <div className={styles.imageContainer}>
-                <img src={image} className={imageOrientation === "landscape" ? styles.landscape : styles.portrait} alt={data.title} />
+            <div className="w-full h-3/4 flex items-center justify-center overflow-hidden relative">
+                <img src={image} className={imageOrientation === "landscape" ? "w-full h-auto object-contain" : "h-full w-auto object-contain"} alt={data.title} />
             </div>
-            <div className={styles.header}>
-                <label className={styles.title}>{data.title}</label>
+            <div className="w-full flex justify-center items-center">
+                <label className="font-bold text-xl text-center">{data.title}</label>
             </div>
-            <div className={styles.shortSummary}>
+            <div className="flex flex-col justify-center items-center gap-2 w-full">
                 <label>{data.shortSummary}</label>
             </div>
-            <div className={styles.buttons}>
-                <div className={styles.button}>
+            <div className="w-full flex flex-row justify-evenly items-center gap-2">
+                <div className="w-full">
                     {data.link === "Work in progress" ? (
                         <Button mode="filled" onHover="black">Work in Progress</Button>
                     ) : (
                         <Button mode="filled" onHover="black" link={data.link}>Visit</Button>
                     )}
                 </div>
-                <div className={styles.button}>
+                <div className="w-full">
                     <Button mode="filled" onHover="black" onClick={handleLearnMore}>
                         Learn More
                     </Button>
@@ -81,20 +80,20 @@ function Project({ image, imageOrientation, data }: ProjectProps) {
 
     const learnMoreState = (
         <>
-            <div className={styles.closeButton}>
+            <div className="flex flex-row w-full justify-end">
                 <CloseIcon onClick={handleCloseInfo} />
             </div>
 
-            <div className={styles.details}>
-                <label className={styles.title}>
+            <div className="flex flex-col justify-center items-center gap-2 w-full overflow-y-auto">
+                <label className="font-bold text-xl text-center">
                     {data.title}
                 </label>
-                <label className={styles.description}>
+                <label className="text-center">
                     {description}
                 </label>
             </div>
 
-            <div className={styles.buttonsLearnMore}>
+            <div className="flex flex-row justify-evenly items-center gap-2">
                 <Button
                     mode="text"
                     onHover="red"
@@ -131,13 +130,13 @@ function Project({ image, imageOrientation, data }: ProjectProps) {
 
     const webState = (
         <>
-            <div className={styles.imageContainer}>
-                <img src={image} className={imageOrientation === "landscape" ? styles.landscape : styles.portrait} alt={data.title} />
+            <div className="w-3/5 h-5/6 flex items-center justify-center overflow-hidden relative">
+                <img src={image} className={imageOrientation === "landscape" ? "w-full h-auto object-contain" : "h-full w-auto object-contain"} alt={data.title} />
             </div>
-            <div className={styles.textContainer}>
-                <label className={styles.title}>{data.title}</label>
-                <label className={styles.description}>{description}</label>
-                <div className={styles.buttons}>
+            <div className="h-5/6 w-2/5 flex flex-col justify-center items-center gap-2 text-center">
+                <label className="font-bold text-xl">{data.title}</label>
+                <label className="text-center">{description}</label>
+                <div className="flex flex-row justify-evenly items-center gap-2 w-full">
                     <Button
                         mode="text"
                         onHover="red"
@@ -169,7 +168,7 @@ function Project({ image, imageOrientation, data }: ProjectProps) {
                         </label>
                     </Button>
                 </div>
-                <div className={styles.button}>
+                <div className="w-full">
                     {data.link === "Work in progress" ? (
                         <Button mode="filled" onHover="black">Work in Progress</Button>
                     ) : (
@@ -181,11 +180,11 @@ function Project({ image, imageOrientation, data }: ProjectProps) {
     );
 
     return (
-        <div className={styles.project}>
-            <div className={styles.content}>
+        <div className="flex flex-col md:flex-row items-center justify-center min-h-[90%] w-full snap-start p-1">
+            <div className="flex flex-col items-center justify-between h-full w-full p-5 bg-white rounded-lg gap-2 md:hidden">
                 {active ? homeState : learnMoreState}
             </div>
-            <div className={styles.webContainer}>
+            <div className="hidden md:flex relative flex-row items-center justify-between h-full w-full p-5 bg-white rounded-lg gap-2">
                 {webState}
             </div>
         </div>
