@@ -1,4 +1,3 @@
-import styles from "./About.module.css";
 import { useState } from "react";
 import Button from "../../components/buttons/Button.tsx";
 import { aboutData } from "./AboutData.ts";
@@ -15,9 +14,9 @@ export default function About() {
     }
 
     return (
-        <div className={styles.container}>
-            <div className={styles.component}>
-                <h2 className={styles.title}>{title}</h2>
+        <div className="h-screen w-screen flex flex-col p-2 bg-gray-100 gap-2">
+            <div className="mt-16 flex flex-col items-center justify-evenly p-2 bg-white rounded-lg overflow-y-auto h-full w-full gap-2">
+                <h2 className="text-2xl font-bold text-gray-800 mb-5">{title}</h2>
 
                 {Array.isArray(description) ? (
                     typeof description[0] === "string" ? (
@@ -43,7 +42,7 @@ export default function About() {
                 )}
             </div>
 
-            <div className={styles.buttons}>
+            <div className="flex flex-row h-10 w-full justify-evenly items-center bg-gray-800 rounded-lg text-white">
                 {aboutData.map((item, idx) => (
                     <Button
                         key={idx}

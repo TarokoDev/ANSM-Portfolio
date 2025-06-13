@@ -1,12 +1,11 @@
 import Project from "./Project.tsx";
-import styles from "./Projects.module.css";
 import ProjectsData from "./ProjectsData.ts";
 
 export default function Projects() {
     return (
         <>
-            <div className={styles.container}>
-                <div className={styles.component}>
+            <div className="h-screen w-full flex flex-col p-2 bg-gray-100">
+                <div className="mt-16 flex flex-col justify-start items-center gap-2 h-full w-full overflow-y-auto snap-y snap-mandatory">
                     <Project
                         image={"/visualalgoflow.png"}
                         imageOrientation="landscape"

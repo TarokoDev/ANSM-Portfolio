@@ -1,6 +1,5 @@
-import React from 'react';
-import styles from "./Button.module.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ButtonProps {
     children: React.ReactNode;
@@ -14,35 +13,30 @@ interface ButtonProps {
 }
 
 function Button({ children, mode, icon, onHover, link, downloadName, onClick, active }: ButtonProps) {
-    let buttonClass = '';
-    let iconClass = <FontAwesomeIcon icon={icon} />
-    let hoverClass = '';
-    let activeClass = active ? styles.active : '';
-
+    const base = "cursor-pointer flex items-center justify-center";
+    let modeClass = "";
     if (mode === "filled") {
-        buttonClass = styles.filled;
+        modeClass = "bg-sky-400 text-white rounded px-2 py-1 transition-colors";
     } else if (mode === "outline") {
-        buttonClass = styles.outline;
+        modeClass = "border-2 border-black text-black rounded px-2 py-1 transition-colors";
     } else if (mode === "text") {
-        buttonClass = styles.text;
+        modeClass = "text-black";
     }
 
+    let hoverClass = "";
     if (onHover === "red") {
-        hoverClass = styles.hoverRed;
+        hoverClass = mode === "text" ? "hover:text-red-500" : "hover:bg-red-500 hover:border-red-500 hover:text-white";
     } else if (onHover === "black") {
-        hoverClass = styles.hoverBlack;
+        hoverClass = "hover:bg-black hover:border-black hover:text-white";
     }
 
-    if (onHover === "red" && mode === "text") {
-        hoverClass = styles.hoverTextRed;
-        buttonClass = styles.text;
-    }
+    const activeClass = active ? "text-red-500" : "";
 
     return (
-        <div className={`${buttonClass} ${hoverClass} ${activeClass}`} onClick={onClick}>
-            {icon && <span className={styles.icon}>{iconClass}</span>}
+        <div className={`${base} ${modeClass} ${hoverClass} ${activeClass}`} onClick={onClick}>
+            {icon && <span className="mr-1"><FontAwesomeIcon icon={icon} /></span>}
             {link ? (
-                <a 
+                <a
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -51,7 +45,7 @@ function Button({ children, mode, icon, onHover, link, downloadName, onClick, ac
                     {children}
                 </a>
             ) : (
-                children
+                <>{children}</>
             )}
         </div>
     );

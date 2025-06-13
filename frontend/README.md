@@ -1,6 +1,6 @@
 # ANSM Portfolio Frontend
 
-This directory contains the React frontend built with Vite and TypeScript.
+This directory contains the React frontend built with Vite and TypeScript. Styling is done with Tailwind CSS.
 
 ## Setup
 
@@ -8,7 +8,9 @@ This directory contains the React frontend built with Vite and TypeScript.
    ```bash
    npm install
    ```
-2. Start the development server:
+2. Tailwind CSS is already configured via `tailwindcss`, `postcss` and `autoprefixer`. The base styles live in `src/index.css`.
+
+3. Start the development server:
    ```bash
    npm run dev
    ```
