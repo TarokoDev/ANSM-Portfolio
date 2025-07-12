@@ -1,6 +1,6 @@
 # ANSM Portfolio
 
-This repository contains the source code for Austin Nathaniel Miranda's personal portfolio website. The front-end is built with React and Vite and showcases projects using 3D scenes created with Spline and Three.js.
+This repository contains the source code for Austin Nathaniel Soriano Miranda's personal portfolio website. The front-end is built with React and Vite and showcases projects using 3D scenes created with Spline and Three.js.
 
 ## Purpose
 
