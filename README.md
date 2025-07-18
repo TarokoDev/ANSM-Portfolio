@@ -13,6 +13,14 @@ The goal of this project is twofold: to present who I am, including my skills an
 3. Maybe replace custom components (buttons, links, cards, etc) with bullet-proof components like ShadCN/UI.
 4. Take advantage of OpenAI codex to have better understanding of codebase, suggest improvements, and faster development.
 
+## Branches
+
+main - The original code written in React, HTML, CSS, Javascript, you may encounter spaghetti code. This branch is deployed to Netlify.
+
+v1 - A copy of the main branch.
+
+v2 - Optimise and refactor code of copy of main branch. Transition from CSS to TailwindCSS (Work-in-progress)
+
 ## Setup
 
 
