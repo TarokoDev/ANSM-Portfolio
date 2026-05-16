@@ -10,11 +10,11 @@
     --error: #FADD61;
     --info: #3C85DA;
 
-    --color-accent: red;
+    --color-accent: #3C85DA;
     --color-surface: whitesmoke;
     --color-text-dark: #333;
     --color-text-secondary: #555;
-    --color-button: skyblue;
+    --color-button: #2c3e50;
     --nav-height: 60px;
     --radius-md: 10px;
     --radius-sm: 5px;

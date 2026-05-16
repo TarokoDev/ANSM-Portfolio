@@ -1,5 +1,6 @@
 export const homeData = {
-    title: "Hi, I'm Austin",
+    greeting: "Hi, I'm",
+    name: "Austin",
     subtitle: "Full-stack developer",
     links: [
         {
