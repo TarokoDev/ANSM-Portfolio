@@ -1,60 +1,168 @@
 import { useEffect, useState } from "react";
 import { Link, Events, scrollSpy } from "react-scroll";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import styles from "./Navbar.module.css";
 import logo from "./logo_black.png";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
+
+const NAV_LINKS = [
+    { to: "home", label: "Home" },
+    { to: "about", label: "About" },
+    { to: "projects", label: "Projects" },
+];
+
+const mobileMenuVariants = {
+    hidden: { opacity: 0, y: -8, scaleY: 0.96 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scaleY: 1,
+        transition: { duration: 0.22, ease: "easeOut", staggerChildren: 0.07 },
+    },
+    exit: { opacity: 0, y: -8, scaleY: 0.96, transition: { duration: 0.16, ease: "easeIn" } },
+};
+
+const mobileItemVariants = {
+    hidden: { opacity: 0, x: -12 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.18 } },
+};
 
 export default function Navbar() {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState("home");
+
     useEffect(() => {
-        Events.scrollEvent.register("begin", function () {});
-        Events.scrollEvent.register("end", function () {});
+        Events.scrollEvent.register("begin", () => {});
+        Events.scrollEvent.register("end", () => {});
         scrollSpy.update();
+
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener("scroll", handleScroll, { passive: true });
 
         return () => {
             Events.scrollEvent.remove("begin");
             Events.scrollEvent.remove("end");
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
-    const [menuOpen, setMenuOpen] = useState(false);
-
-    function handleClick() {
-        setMenuOpen(!menuOpen);
+    function closeMenu() {
+        setMenuOpen(false);
     }
 
     return (
-        <nav className={styles.container} aria-label="Main navigation">
-            <div className={styles.component}>
-                <div className={styles.left}>
-                    <img src={logo} alt="Austin Miranda logo" />
-                    <Link to="home" spy={true} smooth={true} duration={500}>
-                        Austin Miranda
-                    </Link>
-                </div>
+        <>
+            <nav className={styles.container} aria-label="Main navigation">
+                <motion.div
+                    className={`${styles.component} ${scrolled ? styles.scrolled : ""}`}
+                    initial={{ y: -24, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                >
+                    {/* Brand */}
+                    <div className={styles.left}>
+                        <Link to="home" spy smooth duration={500} className={styles.brand}>
+                            <img src={logo} alt="Austin Miranda logo" className={styles.logo} />
+                            <span className={styles.brandName}>Austin Miranda</span>
+                        </Link>
+                    </div>
 
-                <div className={styles.rightMobile}>
+                    {/* Desktop links */}
+                    <LayoutGroup id="navbar-indicator">
+                        <div className={styles.right} role="list">
+                            {NAV_LINKS.map(({ to, label }) => (
+                                <div key={to} className={styles.navItem} role="listitem">
+                                    <Link
+                                        activeClass={styles.active}
+                                        to={to}
+                                        spy
+                                        smooth
+                                        duration={500}
+                                        className={styles.navLink}
+                                        onSetActive={() => setActiveSection(to)}
+                                    >
+                                        {label}
+                                    </Link>
+                                    {activeSection === to && (
+                                        <motion.span
+                                            className={styles.indicator}
+                                            layoutId="activeIndicator"
+                                            transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                                        />
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </LayoutGroup>
+
+                    {/* Hamburger */}
                     <button
-                        onClick={handleClick}
+                        className={styles.hamburger}
+                        onClick={() => setMenuOpen((prev) => !prev)}
                         aria-expanded={menuOpen}
                         aria-label={menuOpen ? "Close menu" : "Open menu"}
                     >
-                        {menuOpen ? <CloseIcon /> : <MenuIcon />}
+                        <motion.div
+                            className={styles.hamburgerIcon}
+                            animate={menuOpen ? "open" : "closed"}
+                        >
+                            <motion.span
+                                variants={{
+                                    closed: { rotate: 0, y: 0 },
+                                    open: { rotate: 45, y: 7 },
+                                }}
+                                transition={{ duration: 0.22 }}
+                            />
+                            <motion.span
+                                variants={{
+                                    closed: { opacity: 1, scaleX: 1 },
+                                    open: { opacity: 0, scaleX: 0 },
+                                }}
+                                transition={{ duration: 0.18 }}
+                            />
+                            <motion.span
+                                variants={{
+                                    closed: { rotate: 0, y: 0 },
+                                    open: { rotate: -45, y: -7 },
+                                }}
+                                transition={{ duration: 0.22 }}
+                            />
+                        </motion.div>
                     </button>
-                </div>
+                </motion.div>
+            </nav>
 
-                <div className={`${styles.right} ${menuOpen ? styles.showMenu : ""}`}>
-                    <Link activeClass={styles.active} to="home" spy={true} smooth={true} duration={500}>
-                        Home
-                    </Link>
-                    <Link activeClass={styles.active} to="about" spy={true} smooth={true} duration={500}>
-                        About Me
-                    </Link>
-                    <Link activeClass={styles.active} to="projects" spy={true} smooth={true} duration={500}>
-                        Projects
-                    </Link>
-                </div>
-            </div>
-        </nav>
+            {/* Mobile dropdown — outside nav so it can overflow fixed container */}
+            <AnimatePresence>
+                {menuOpen && (
+                    <motion.div
+                        className={styles.mobileMenu}
+                        variants={mobileMenuVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        style={{ originY: 0 }}
+                        role="menu"
+                    >
+                        {NAV_LINKS.map(({ to, label }) => (
+                            <motion.div key={to} variants={mobileItemVariants}>
+                                <Link
+                                    activeClass={styles.mobileActive}
+                                    to={to}
+                                    spy
+                                    smooth
+                                    duration={500}
+                                    className={styles.mobileLink}
+                                    onClick={closeMenu}
+                                    role="menuitem"
+                                >
+                                    {label}
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
     );
 }
