@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Events, scrollSpy } from "react-scroll";
 import styles from "./Navbar.module.css";
 import logo from "./logo_black.png";
@@ -7,14 +7,8 @@ import CloseIcon from "@mui/icons-material/Close";
 
 export default function Navbar() {
     useEffect(() => {
-        Events.scrollEvent.register("begin", function () {
-            // console.log("begin", arguments);
-        });
-
-        Events.scrollEvent.register("end", function () {
-            // console.log("end", arguments);
-        });
-
+        Events.scrollEvent.register("begin", function () {});
+        Events.scrollEvent.register("end", function () {});
         scrollSpy.update();
 
         return () => {
@@ -26,15 +20,11 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     function handleClick() {
-        setMenuOpen(!menuOpen)
+        setMenuOpen(!menuOpen);
     }
 
-    const closeMenu = () => {
-        setMenuOpen(false);
-    };
-
     return (
-        <div className={styles.container}>
+        <nav className={styles.container} aria-label="Main navigation">
             <div className={styles.component}>
                 <div className={styles.left}>
                     <img src={logo} alt="Austin Miranda logo" />
@@ -44,52 +34,27 @@ export default function Navbar() {
                 </div>
 
                 <div className={styles.rightMobile}>
-                    <button onClick={handleClick}>
-                        {menuOpen === true ? <CloseIcon /> : <MenuIcon />}
+                    <button
+                        onClick={handleClick}
+                        aria-expanded={menuOpen}
+                        aria-label={menuOpen ? "Close menu" : "Open menu"}
+                    >
+                        {menuOpen ? <CloseIcon /> : <MenuIcon />}
                     </button>
                 </div>
 
-                <div
-                    className={`${styles.right} ${menuOpen ? styles.showMenu : ""}`}
-                >
-                    <Link
-                        activeClass={styles.active}
-                        to="home"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                    >
+                <div className={`${styles.right} ${menuOpen ? styles.showMenu : ""}`}>
+                    <Link activeClass={styles.active} to="home" spy={true} smooth={true} duration={500}>
                         Home
                     </Link>
-                    <Link
-                        activeClass={styles.active}
-                        to="about"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                    >
+                    <Link activeClass={styles.active} to="about" spy={true} smooth={true} duration={500}>
                         About Me
                     </Link>
-                    <Link
-                        activeClass={styles.active}
-                        to="projects"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                    >
+                    <Link activeClass={styles.active} to="projects" spy={true} smooth={true} duration={500}>
                         Projects
                     </Link>
-                    {/* <Link
-                        activeClass={styles.active}
-                        to="contact"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                    >
-                        Contact Me
-                    </Link> */}
                 </div>
             </div>
-        </div>
+        </nav>
     );
 }

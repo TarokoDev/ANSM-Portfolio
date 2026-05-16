@@ -9,6 +9,7 @@ function Project({ image, imageOrientation, data }) {
     const [activeButton, setActiveButton] = useState("summary");
     const [description, setDescription] = useState(data.summary);
     const [active, setActive] = useState(true);
+    const [imgError, setImgError] = useState(false);
 
     function handleClick(index) {
         setActiveButton(index);
@@ -48,7 +49,11 @@ function Project({ image, imageOrientation, data }) {
     const homeState = (
         <>
             <div className={styles.imageContainer}>
-                <img src={image} className={imageOrientation === "landscape" ? styles.landscape : styles.portrait} alt={data.title} />
+                {imgError ? (
+                    <div className={styles.imgPlaceholder}>{data.title}</div>
+                ) : (
+                    <img src={image} className={imageOrientation === "landscape" ? styles.landscape : styles.portrait} alt={data.title} loading="lazy" onError={() => setImgError(true)} />
+                )}
             </div>
             <div className={styles.header}>
                 <label className={styles.title}>{data.title}</label>
@@ -58,8 +63,8 @@ function Project({ image, imageOrientation, data }) {
             </div>
             <div className={styles.buttons}>
                 <div className={styles.button}>
-                    {data.link === "Work in progress" ? (
-                        <Button mode="filled" onHover="black">Work in Progress</Button>
+                    {data.inProgress ? (
+                        <Button mode="filled" disabled>Work in Progress</Button>
                     ) : (
                         <Button mode="filled" onHover="black" link={data.link}>Visit</Button>
                     )}
@@ -76,7 +81,9 @@ function Project({ image, imageOrientation, data }) {
     const learnMoreState = (
         <>
             <div className={styles.closeButton}>
-                <CloseIcon onClick={handleCloseInfo} />
+                <button className={styles.closeIconButton} onClick={handleCloseInfo} type="button" aria-label="Close">
+                    <CloseIcon />
+                </button>
             </div>
 
             <div className={styles.details}>
@@ -126,7 +133,11 @@ function Project({ image, imageOrientation, data }) {
     const webState = (
         <>
             <div className={styles.imageContainer}>
-                <img src={image} className={imageOrientation === "landscape" ? styles.landscape : styles.portrait} alt={data.title} />
+                {imgError ? (
+                    <div className={styles.imgPlaceholder}>{data.title}</div>
+                ) : (
+                    <img src={image} className={imageOrientation === "landscape" ? styles.landscape : styles.portrait} alt={data.title} loading="lazy" onError={() => setImgError(true)} />
+                )}
             </div>
             <div className={styles.textContainer}>
                 <label className={styles.title}>{data.title}</label>
@@ -164,8 +175,8 @@ function Project({ image, imageOrientation, data }) {
                     </Button>
                 </div>
                 <div className={styles.button}>
-                    {data.link === "Work in progress" ? (
-                        <Button mode="filled" onHover="black">Work in Progress</Button>
+                    {data.inProgress ? (
+                        <Button mode="filled" disabled>Work in Progress</Button>
                     ) : (
                         <Button mode="filled" onHover="black" link={data.link}>Visit</Button>
                     )}

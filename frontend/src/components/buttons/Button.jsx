@@ -1,12 +1,11 @@
-import React from 'react';
 import styles from "./Button.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Button({ children, mode, icon, onHover, link, downloadName, onClick, active }) {
+function Button({ children, mode, icon, onHover, link, downloadName, onClick, active, disabled }) {
     let buttonClass = '';
-    let iconClass = <FontAwesomeIcon icon={icon} />
     let hoverClass = '';
-    let activeClass = active ? styles.active : '';
+    const activeClass = active ? styles.active : '';
+    const iconEl = icon ? <span className={styles.icon}><FontAwesomeIcon icon={icon} /></span> : null;
 
     if (mode === "filled") {
         buttonClass = styles.filled;
@@ -27,22 +26,33 @@ function Button({ children, mode, icon, onHover, link, downloadName, onClick, ac
         buttonClass = styles.text;
     }
 
+    const className = `${buttonClass} ${hoverClass} ${activeClass}`.trim();
+
+    if (link) {
+        return (
+            <a
+                className={className}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                download={downloadName}
+            >
+                {iconEl}
+                {children}
+            </a>
+        );
+    }
+
     return (
-        <div className={`${buttonClass} ${hoverClass} ${activeClass}`} onClick={onClick}>
-            {icon && <span className={styles.icon}>{iconClass}</span>}
-            {link ? (
-                <a 
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    download={downloadName}
-                >
-                    {children}
-                </a>
-            ) : (
-                children
-            )}
-        </div>
+        <button
+            className={className}
+            onClick={onClick}
+            type="button"
+            disabled={disabled}
+        >
+            {iconEl}
+            {children}
+        </button>
     );
 }
 

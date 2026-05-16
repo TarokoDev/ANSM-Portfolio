@@ -5,6 +5,8 @@ import { ClimbingBoxLoader } from 'react-spinners';
 import Button from '../../components/buttons/Button.jsx';
 import { homeData } from './HomeData.js';
 
+const SPLINE_TIMEOUT_MS = 10000;
+
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
     const [isSplineLoaded, setIsSplineLoaded] = useState(false);
@@ -13,11 +15,17 @@ export default function Home() {
         if (isSplineLoaded) {
             const timer = setTimeout(() => {
                 setIsLoading(false);
-            }, 500); // Delay to ensure Spline scene is fully rendered
-
+            }, 500);
             return () => clearTimeout(timer);
         }
     }, [isSplineLoaded]);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setIsLoading(false);
+        }, SPLINE_TIMEOUT_MS);
+        return () => clearTimeout(timeout);
+    }, []);
 
     return (
         <div className={styles.container}>
@@ -47,7 +55,6 @@ export default function Home() {
                                 <Button mode="text" onHover="red" link={homeData.links[2].url} downloadName={homeData.links[2].downloadName}>{homeData.links[2].label}</Button>
                             </div>
                         </div>
-                        
                     </div>
                 )}
             </div>

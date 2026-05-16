@@ -9,6 +9,17 @@
     --warning: #FA773C;
     --error: #FADD61;
     --info: #3C85DA;
+
+    --color-accent: red;
+    --color-surface: whitesmoke;
+    --color-text-dark: #333;
+    --color-text-secondary: #555;
+    --color-button: skyblue;
+    --nav-height: 60px;
+    --radius-md: 10px;
+    --radius-sm: 5px;
+    --transition-fast: 0.2s ease-in;
+    --transition-base: 0.3s ease;
 }
 
 .main {

@@ -6,12 +6,12 @@
     flex-direction: column;
     padding: 10px;
     box-sizing: border-box;
-    background: whitesmoke;
+    background: var(--color-surface);
     gap: 10px;
 }
 
 label {
-    font-size: clamp(1rem, 1rem + 1vw, 1rem);
+    font-size: clamp(0.875rem, 0.75rem + 0.5vw, 1rem);
 }
 
 .buttons label {
@@ -20,7 +20,7 @@ label {
 
 .component {
     gap: 10px;
-    margin-top: 60px;
+    margin-top: var(--nav-height);
     height: 100%;
     width: 100%;
     display: flex;
@@ -29,8 +29,8 @@ label {
     justify-content: space-evenly;
     padding: 10px;
     box-sizing: border-box;
-    background: white;
-    border-radius: 10px;
+    background: var(--background-color);
+    border-radius: var(--radius-md);
     overflow-y: auto;
 }
 
@@ -46,7 +46,7 @@ label {
 .title {
     font-size: 2rem;
     font-weight: bold;
-    color: #333;
+    color: var(--color-text-dark);
     margin-bottom: 20px;
 }
 
@@ -56,7 +56,7 @@ label {
     justify-content: flex-start;
     align-items: center;
     font-size: 1rem;
-    color: #555;
+    color: var(--color-text-secondary);
     overflow-y: auto;
 }
 
@@ -74,20 +74,20 @@ label {
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #333;
-    border-radius: 10px;
+    background-color: var(--color-text-dark);
+    border-radius: var(--radius-md);
 }
 
 .buttons div {
-    color: white;
+    color: var(--background-color);
 }
 
 .buttons div {
     cursor: pointer;
     scale: 1;
-    transition: scale 0.2s ease-in, background-color 0.2s ease-in;
+    transition: scale var(--transition-fast), background-color var(--transition-fast);
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: var(--radius-sm);
 }
 
 .buttons div:hover {
@@ -99,5 +99,11 @@ label {
 @media screen and (min-width: 480px) {
     .content {
         width: 80%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .buttons div {
+        transition: none;
     }
 }

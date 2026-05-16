@@ -224,6 +224,7 @@ const data = [
             { title: "Additional Tools", description: "TMDB API, XCode iOS Simulator, Chrome Developer Tools" },
         ],
         link: "Work in progress",
+        inProgress: true,
     },
     {
         title: "Portfolio",

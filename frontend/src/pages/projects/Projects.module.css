@@ -8,11 +8,11 @@
     flex-direction: column;
     padding: 10px;
     box-sizing: border-box;
-    background-color: whitesmoke;
+    background-color: var(--color-surface);
 }
 
 .component {
-    margin-top: 60px;
+    margin-top: var(--nav-height);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -27,7 +27,7 @@
 
 ::-webkit-scrollbar {
     width: 0px;
-    background: transparent; /* make scrollbar transparent */
+    background: transparent;
 }
 
 
