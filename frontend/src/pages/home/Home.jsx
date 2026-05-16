@@ -3,6 +3,7 @@ import styles from './Home.module.css';
 import Spline from '@splinetool/react-spline';
 import { ClimbingBoxLoader } from 'react-spinners';
 import Button from '../../components/buttons/Button.jsx';
+import { homeData } from './HomeData.js';
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +28,7 @@ export default function Home() {
                     </div>
                 )}
                 <Spline
-                    scene="https://prod.spline.design/PHGfbT0FgFXoPG-E/scene.splinecode"
+                    scene={homeData.spline}
                     onLoad={() => setIsSplineLoaded(true)}
                 />
 
@@ -35,15 +36,15 @@ export default function Home() {
                     <div className={styles.text}>
                         <div className={styles.header}>
                             <div className={styles.textTop}>
-                                <div>Hi! I'm Austin</div>
+                                <div>{homeData.title}</div>
                             </div>
                             <div className={styles.textBottom}>
-                                <div>Full-stack developer</div>
+                                <div>{homeData.subtitle}</div>
                             </div>
                             <div className={styles.links}>
-                                <Button mode="text" onHover="red" link="https://github.com/TarokoDev">Github</Button>
-                                <Button mode="text" onHover="red" link="https://www.linkedin.com/in/austin-miranda">LinkedIn</Button>
-                                <Button mode="text" onHover="red" link="/resume.pdf" downloadName="Resume_Austin_Miranda.pdf">Resume</Button>
+                                <Button mode="text" onHover="red" link={homeData.links[0].url}>{homeData.links[0].label}</Button>
+                                <Button mode="text" onHover="red" link={homeData.links[1].url}>{homeData.links[1].label}</Button>
+                                <Button mode="text" onHover="red" link={homeData.links[2].url} downloadName={homeData.links[2].downloadName}>{homeData.links[2].label}</Button>
                             </div>
                         </div>
                         
