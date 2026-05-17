@@ -14,7 +14,7 @@ export const homeData = {
         {
             label: "Resume",
             url: "/resume.pdf",
-            downloadName: "Resume_Austin_Miranda.pdf",
+            downloadName: "Austin_Miranda_Resume.pdf",
         },
     ],
     spline: "https://prod.spline.design/PHGfbT0FgFXoPG-E/scene.splinecode",
