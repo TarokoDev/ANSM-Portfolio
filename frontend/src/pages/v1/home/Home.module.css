@@ -1,0 +1,122 @@
+/* Mobile Screen */
+.container {
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: var(--color-surface);
+}
+
+.component {
+    margin-top: var(--nav-height);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface);
+    position: relative;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgba(226, 226, 226, 0.7);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    width: auto;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.textTop, .textBottom {
+    color: var(--color-text-dark);
+    width: 100%;
+}
+
+.textBottom {
+    font-size: 20px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    height: 30px;
+    width: 100%;
+    background-color: var(--color-text-dark);
+    border-radius: var(--radius-md);
+}
+
+.links a {
+    color: var(--background-color);
+}
+
+@media screen and (min-width: 407px) and (max-width: 479px) {
+
+}
+
+@media screen and (min-width: 480px) {
+    .header {
+        width: auto;
+    }
+
+    .text {
+        padding: 80px;
+        box-sizing: border-box;
+    }
+
+    .textTop, .textBottom {
+        color: var(--color-text-dark);
+    }
+
+    .textTop {
+        font-size: 2rem;
+    }
+
+    .textBottom {
+        font-size: 30px;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        font-size: 16px;
+        margin-top: 10px;
+        height: 30px;
+        width: auto;
+        background-color: var(--color-text-dark);
+        border-radius: var(--radius-md);
+        padding: 10px;
+    }
+}

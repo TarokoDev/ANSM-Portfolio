@@ -1,0 +1,108 @@
+/* General Styles */
+.container {
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    background: var(--color-surface);
+    gap: 10px;
+}
+
+label {
+    font-size: clamp(0.875rem, 0.75rem + 0.5vw, 1rem);
+}
+
+.buttons label {
+    font-size: clamp(0.6rem, 0.6rem + 1vw, 1rem);
+}
+
+.component {
+    gap: 10px;
+    margin-top: var(--nav-height);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    box-sizing: border-box;
+    background: var(--background-color);
+    border-radius: var(--radius-md);
+    overflow-y: auto;
+}
+
+.content {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text-dark);
+    margin-bottom: 20px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    overflow-y: auto;
+}
+
+.description li {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--color-text-dark);
+    border-radius: var(--radius-md);
+}
+
+.buttons div {
+    color: var(--background-color);
+}
+
+.buttons div {
+    cursor: pointer;
+    scale: 1;
+    transition: scale var(--transition-fast), background-color var(--transition-fast);
+    padding: 5px 10px;
+    border-radius: var(--radius-sm);
+}
+
+.buttons div:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    scale: 1.05;
+}
+
+@media screen and (min-width: 480px) {
+    .content {
+        width: 80%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .buttons div {
+        transition: none;
+    }
+}
