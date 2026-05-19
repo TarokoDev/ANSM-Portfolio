@@ -3,6 +3,7 @@ import "./App.css";
 import NavbarV2 from "./components/navbar/Navbar";
 import NavbarV1 from "./components/v1/navbar/Navbar";
 import SettingsDialog from "./components/settings/SettingsDialog";
+import LandscapeWarning from "./components/landscape/LandscapeWarning";
 
 import HomeV2     from "./pages/home/Home";
 import AboutV2    from "./pages/about/About";
@@ -30,6 +31,7 @@ function App() {
 
     return (
         <div className="main">
+            <LandscapeWarning />
             <div id="navbar" className="navbar">
                 <Navbar onOpenSettings={() => setSettingsOpen(true)} />
             </div>
