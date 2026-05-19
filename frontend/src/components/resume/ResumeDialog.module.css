@@ -1,0 +1,97 @@
+.backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: zoom-out;
+}
+
+.dialog {
+    position: relative;
+    width: min(860px, 100%);
+    height: min(90vh, 700px);
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: default;
+    transition: width 0.28s ease, height 0.28s ease, border-radius 0.28s ease;
+}
+
+.dialogFullscreen {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+/* ── Toolbar ── */
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+    background: white;
+}
+
+.toolbarTitle {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.toolbarActions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.iconBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.iconBtn:hover {
+    background: var(--color-surface);
+    color: var(--color-text-dark);
+    transform: scale(1.08);
+}
+
+.iconBtn:active {
+    transform: scale(0.95);
+}
+
+/* ── PDF viewer ── */
+.viewer {
+    flex: 1;
+    width: 100%;
+    border: none;
+    display: block;
+    min-height: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dialog {
+        transition: none;
+    }
+}

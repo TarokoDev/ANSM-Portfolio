@@ -4,6 +4,7 @@ import styles from './Home.module.css';
 import Spline from '@splinetool/react-spline';
 import { ClimbingBoxLoader } from 'react-spinners';
 import Button from '../../components/buttons/Button.jsx';
+import ResumeDialog from '../../components/resume/ResumeDialog.jsx';
 import { homeData } from './HomeData.js';
 
 const SPLINE_TIMEOUT_MS = 10000;
@@ -21,6 +22,7 @@ const lineVariants = {
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
     const [isSplineLoaded, setIsSplineLoaded] = useState(false);
+    const [resumeOpen, setResumeOpen] = useState(false);
 
     useEffect(() => {
         if (isSplineLoaded) {
@@ -84,7 +86,7 @@ export default function Home() {
                                 <Button mode="outline" onHover="red" link={homeData.links[1].url}>
                                     {homeData.links[1].label}
                                 </Button>
-                                <Button mode="outline" onHover="red" link={homeData.links[2].url} downloadName={homeData.links[2].downloadName}>
+                                <Button mode="outline" onHover="red" onClick={() => setResumeOpen(true)}>
                                     {homeData.links[2].label}
                                 </Button>
                             </motion.div>
@@ -104,6 +106,13 @@ export default function Home() {
                     </motion.div>
                 )}
             </div>
+
+            <ResumeDialog
+                open={resumeOpen}
+                onClose={() => setResumeOpen(false)}
+                src={homeData.links[2].url}
+                downloadName={homeData.links[2].downloadName}
+            />
         </div>
     );
 }
