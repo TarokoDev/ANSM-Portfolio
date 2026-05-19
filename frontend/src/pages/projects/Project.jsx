@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Project.module.css";
 import Button from "../../components/buttons/Button.jsx";
@@ -38,11 +38,53 @@ function renderContent(activeTab, data, listClass, summaryClass) {
 }
 
 function Project({ image, imageOrientation, data, direction }) {
-    const [activeTab, setActiveTab] = useState("summary");
-    const [imgError, setImgError]   = useState(false);
+    const [activeTab, setActiveTab]   = useState("summary");
+    const [imgError, setImgError]     = useState(false);
+    const [lightbox, setLightbox]     = useState(false);
     const pillId = `tabPill-${data.title}`;
 
+    const closeLightbox = useCallback(() => setLightbox(false), []);
+
+    useEffect(() => {
+        if (!lightbox) return;
+        const onKey = (e) => { if (e.key === "Escape") closeLightbox(); };
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, [lightbox, closeLightbox]);
+
     return (
+        <>
+        <AnimatePresence>
+            {lightbox && !imgError && (
+                <motion.div
+                    className={styles.lightboxOverlay}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.22 }}
+                    onClick={closeLightbox}
+                >
+                    <motion.div
+                        className={styles.lightboxCard}
+                        initial={{ scale: 0.88, opacity: 0 }}
+                        animate={{ scale: 1,    opacity: 1 }}
+                        exit={{ scale: 0.88,    opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeOut" }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <img
+                            src={image}
+                            alt={data.title}
+                            className={styles.lightboxImg}
+                        />
+                        <button className={styles.lightboxClose} onClick={closeLightbox} aria-label="Close">
+                            ✕
+                        </button>
+                    </motion.div>
+                </motion.div>
+            )}
+        </AnimatePresence>
+
         <motion.div
             className={styles.project}
             custom={direction}
@@ -56,6 +98,7 @@ function Project({ image, imageOrientation, data, direction }) {
                 {imgError ? (
                     <div className={styles.imgPlaceholder}>{data.title}</div>
                 ) : (
+                    <>
                     <img
                         src={image}
                         className={imageOrientation === "landscape" ? styles.landscape : styles.portrait}
@@ -63,6 +106,14 @@ function Project({ image, imageOrientation, data, direction }) {
                         loading="lazy"
                         onError={() => setImgError(true)}
                     />
+                    <button
+                        className={styles.expandBtn}
+                        onClick={() => setLightbox(true)}
+                        aria-label="Expand image"
+                    >
+                        +
+                    </button>
+                    </>
                 )}
             </div>
 
@@ -113,6 +164,7 @@ function Project({ image, imageOrientation, data, direction }) {
                 </div>
             </div>
         </motion.div>
+        </>
     );
 }
 

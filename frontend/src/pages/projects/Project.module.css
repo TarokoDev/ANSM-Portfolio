@@ -24,6 +24,103 @@
     background: rgba(0, 0, 0, 0.03);
     padding: 12px;
     box-sizing: border-box;
+    position: relative;
+}
+
+.expandBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: var(--color-text-dark);
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.18s ease, background 0.18s ease;
+    padding: 0;
+}
+
+.expandBtn:hover {
+    transform: scale(1.15);
+    background: white;
+}
+
+.expandBtn:active {
+    transform: scale(0.95);
+}
+
+/* ── Lightbox ── */
+.lightboxOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    cursor: zoom-out;
+}
+
+.lightboxCard {
+    position: relative;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    max-width: 90vw;
+    max-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+.lightboxImg {
+    max-width: calc(90vw - 40px);
+    max-height: calc(88vh - 40px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    display: block;
+}
+
+.lightboxClose {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-text-dark);
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.lightboxClose:hover {
+    background: #111;
+    transform: scale(1.1);
 }
 
 .landscape {
