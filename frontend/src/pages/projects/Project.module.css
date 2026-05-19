@@ -14,9 +14,9 @@
     overflow: hidden;
 }
 
-/* ── Image pane — top 40% on mobile ── */
+/* ── Image pane — fixed height on mobile ── */
 .imagePane {
-    flex: 0 0 40%;
+    flex: 0 0 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -274,8 +274,8 @@
     justify-content: center;
 }
 
-/* ── Desktop: horizontal split ── */
-@media screen and (min-width: 480px) {
+/* ── Tablet and above: horizontal split ── */
+@media screen and (min-width: 600px) {
     .project {
         flex-direction: row;
     }
