@@ -109,6 +109,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.18s ease;
+}
+
+.tabButton:not([aria-selected="true"]):hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .tabButton:focus-visible {

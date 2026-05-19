@@ -2,16 +2,17 @@ export const aboutData = [
     {
         title: "Background",
         description: [
-            "I am a full-stack developer with a passion for creating innovative and efficient web applications. My journey in software development began with a fascination for technology and a desire to solve real-world problems through code.",
-            "I have experience in both front-end and back-end development, allowing me to build complete solutions that are not only functional but also user-friendly. I thrive in collaborative environments and enjoy working with teams to bring ideas to life.",
-            "My goal is to continuously learn and adapt to new technologies, ensuring that I can deliver high-quality software that meets the needs of users and businesses alike." 
+            "Our story begins where most great ones do: at a keyboard, slightly sleep-deprived, convinced there had to be a better way to build things. Two years and several production deployments later, Austin has shipped platforms end-to-end — frontend, backend, and everything in between — across fast-moving startups where 'we'll figure it out' is practically a job requirement.",
+            "He's architected ERP systems from scratch, wrangled AI-powered image generation APIs, onboarded developers who probably had more questions than he had answers (he found the answers), and somehow kept stakeholders, QA teams, and CTOs in agreement — occasionally all at once.",
+            "These days he's chasing the intersection of fast delivery and clean code, armed with a healthy respect for maintainability and an unhealthy number of browser tabs. He uses AI tooling daily, commits often, and believes good software should feel obvious to the people using it."
         ]
     },
     {
         title: "Education",
         description: [
-            "I hold a Bachelor's degree in Computer Science from the University of Wollongong, where I majored in Digital Systems and Security. My education provided me with a solid foundation in software development principles and practices.",
-            "Prior to that, I studied Product Design and Innovation at Ngee Ann Polytechnic, where I learned to blend creativity with technical skills, preparing me for a career in full-stack development."
+            "It started early — Austin was that kid in secondary school who took Design & Technology far too seriously. Topping his cohort earned him a place at Ngee Ann Polytechnic, where he spent three years studying Product Design & Innovation and learning that great things are built at the intersection of how something looks and how it works.",
+            "That design sensibility stuck. But somewhere between prototyping physical products and watching the web reshape everything, the question shifted from 'what should this look like?' to 'how does this actually work?' — and so began a part-time Bachelor's in Computer Science (Digital Systems & Security) at the University of Wollongong via SIM, completed in 2024.",
+            "The result: a developer who treats UI as a first-class concern, thinks in systems, and genuinely enjoys the part where things have to be both functional and beautiful."
         ]
     },
     {
@@ -20,49 +21,49 @@ export const aboutData = [
             {
                 title: "Frontend",
                 items: [
-                    "React","Typescript", "HTML", "CSS", "JavaScript", "React-Native", "Tailwind CSS", "BootStrap", "Vite", "Expo", "Shadcn UI", "Material UI", "Bootstrap",
+                    "React", "TypeScript", "JavaScript", "HTML", "CSS", "Next.JS", "Vite", "Redux", "Tailwind CSS", "ShadCN UI", "Material UI"
                 ]
             },
             {
                 title: "Backend",
                 items: [
-                    "Node.js", "Express", "MongoDB", "PostgreSQL", "RESTful APIs", "Postman", "Supabase", 
+                    "Node.js", "Express", "FastAPI", "PostgreSQL", "SSMS", "MongoDB", "Supabase", "Directus", "RESTful APIs"
                 ]
             },
             {
                 title: "Languages",
                 items: [
-                    "Python", "JavaScript", "Java", "C++"
+                    "TypeScript", "JavaScript", "Python", "HTML", "CSS"
+                ]
+            },
+            {
+                title: "Dev Tools",
+                items: [
+                    "Git", "Docker", "Postman", "GitLab", "Azure DevOps", "Grafana", "Swagger"
                 ]
             },
             {
                 title: "Testing",
                 items: [
-                    "Cypress", "XCode Simulator"
+                    "Cypress"
                 ]
             },
             {
                 title: "Cloud Platforms",
                 items: [
-                    "Netlify", "Render", "AWS"
-                ]
-            },
-            {
-                title: "Version Control",
-                items: [
-                    "Git", "GitHub"
+                    "AWS", "Netlify", "Render"
                 ]
             },
             {
                 title: "Design / Prototyping Tools",
                 items: [
-                    "Figma", "Adobe XD", "Adobe Illustrator", "Canva", "Spline"
+                    "Figma", "Adobe Illustrator", "Spline"
                 ]
             },
             {
-                title: "Additional Tools / Skills",
+                title: "AI & Dev Tools",
                 items: [
-                    "OpenAI ChatGPT", "Anthropic Claude", "Google Gemini", "Prompt Engineering", "Image Generation"
+                    "Cursor", "Claude Code", "ChatGPT", "Prompt Engineering", "Image Generation"
                 ]
             }
         ]

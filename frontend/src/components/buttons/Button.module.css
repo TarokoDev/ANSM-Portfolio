@@ -17,8 +17,18 @@
     padding: 8px;
     border-radius: var(--radius-sm);
     border: none;
-    transition: background-color var(--transition-base);
+    transition: background-color var(--transition-base), transform 0.18s ease, box-shadow 0.18s ease;
     font-size: min(max(0.7rem, 0.5rem + 1vw), 1rem);
+}
+
+.filled:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.filled:active {
+    transform: translateY(0px) scale(0.97);
+    box-shadow: none;
 }
 
 .outline {
@@ -33,7 +43,17 @@
     height: auto;
     padding: 8px;
     border-radius: var(--radius-sm);
-    transition: border-color var(--transition-base), color var(--transition-base);
+    transition: border-color var(--transition-base), color var(--transition-base), transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.outline:active {
+    transform: translateY(0px) scale(0.97);
+    box-shadow: none;
 }
 
 .text {
@@ -47,10 +67,32 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: currentColor;
+    transition: width 0.22s ease;
+}
+
+.text:hover::after {
+    width: 100%;
 }
 
 .icon {
     margin-right: 5px;
+    transition: transform 0.18s ease;
+}
+
+.filled:hover .icon,
+.outline:hover .icon {
+    transform: translateX(2px);
 }
 
 .hoverRed:hover {
@@ -69,6 +111,10 @@
     color: var(--color-accent);
 }
 
+.hoverTextRed::after {
+    background-color: var(--color-accent);
+}
+
 .active {
     color: var(--color-accent);
 }
@@ -76,6 +122,11 @@
 .filled:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+.filled:disabled:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 .filled:focus-visible,
@@ -87,7 +138,14 @@
 
 @media (prefers-reduced-motion: reduce) {
     .filled,
-    .outline {
+    .outline,
+    .text::after,
+    .icon {
         transition: none;
+    }
+    .filled:hover,
+    .outline:hover {
+        transform: none;
+        box-shadow: none;
     }
 }
