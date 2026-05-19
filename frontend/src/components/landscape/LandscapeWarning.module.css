@@ -3,9 +3,11 @@
     display: none;
 }
 
-/* Phones in landscape: short height + landscape orientation.
-   Tablets in landscape remain tall (600px+) so they won't match. */
-@media screen and (orientation: landscape) and (max-height: 500px) {
+/* Phones in landscape: short height + touch device + landscape orientation.
+   Raised to 600px to catch Z Fold cover screen and similar narrow foldables.
+   pointer:coarse excludes desktop browsers that resize into this range.
+   Tablets in landscape stay tall (768px+) so they won't match. */
+@media screen and (orientation: landscape) and (max-height: 600px) and (pointer: coarse) {
     .overlay {
         display: flex;
         position: fixed;

@@ -137,8 +137,9 @@
     font-weight: 500;
     color: var(--color-text-dark);
     transition: color var(--transition-fast);
-    white-space: nowrap;
     font-family: inherit;
+    text-align: center;
+    word-break: break-word;
 }
 
 .tabButton[aria-selected="true"] .tabLabel {
