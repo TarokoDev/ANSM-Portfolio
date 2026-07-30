@@ -1,5 +1,70 @@
 const data = [
     {
+        title: "QMC — Quote Management System",
+        shortSummary:
+            "A full-stack quotation system for interior design firms — build, revise, and export client quotes.",
+        summary: `I built QMC for a friend who works as an interior designer. Every new client meant rebuilding the same line items by hand in a fresh spreadsheet — slow, easy to get wrong, and impossible to look back on once a price had been edited over. Margins lived in the designer's head rather than in the document, and each round of client haggling quietly destroyed the version before it.
+
+The objective was to turn quoting from a rebuild into a reuse: seed a quote from a master template, adjust the numbers, and export a finished PDF or spreadsheet in minutes instead of an afternoon. Work is organised into folders, categories, and clients, and every client carries its own revision history (R0, R1, ...) so a new round of pricing clones the last one instead of overwriting it — the negotiation trail stays intact.
+
+Cost and selling price are tracked per line item, so profit and margin are computed live on an internal-only Summary tab that the client-facing output never shows. Section, area, and item each carry an inclusion checkbox, letting whole rooms or trades be quoted, held back, or discounted without deleting the work. Numbering is derived from position, so removing an item reflows the rest rather than leaving gaps to fix by hand.
+
+Built with React 19, Express, Prisma, and Supabase (Auth + Postgres), with per-user data scoping so multiple designers can work in the same system without seeing each other's clients. It is currently in UAT with the designer it was built for, and features are still being refined on his feedback.`,
+        keyFeatures: [
+            {
+                title: "Detailed Quote Editor",
+                description:
+                    "Sections break down into areas of work and line items, each with quantity, unit, cost price, selling price, and profit margin.",
+            },
+            {
+                title: "Revision History & Master Template",
+                description:
+                    "Every client has independent, persisted revisions cloned from the previous one, plus an org-wide master template to seed new quotes and reset a revision if edits go wrong.",
+            },
+            {
+                title: "PDF & Excel Export",
+                description:
+                    "Print-styled A4 preview with repeating headers for PDF, and client-side .xlsx generation — both sharing one column contract so output stays consistent.",
+            },
+            {
+                title: "Three-Tier Total Gating",
+                description:
+                    "Section, area, and line item each carry an inclusion checkbox, so what counts toward totals is controlled at every level. Live numbering reflows automatically when items are deleted.",
+            },
+            {
+                title: "Roles & Admin Dashboard",
+                description:
+                    "Admin, designer, and demo roles from Supabase app metadata. Admins get a user directory, per-user metrics, a sign-in activity log, and read-only drill-down into any user's quotes.",
+            },
+            {
+                title: "Demo Playground Account",
+                description:
+                    "A one-click demo login seeds realistic sample data and self-resets on login and logout, so the app can be explored without touching real client data.",
+            },
+        ],
+        techStack: [
+            {
+                title: "Frontend",
+                description:
+                    "React 19, TypeScript, Vite, Tailwind CSS v4, DaisyUI, shadcn/ui, react-router-dom, xlsx, Lucide React",
+            },
+            {
+                title: "Backend",
+                description:
+                    "Node.js, Express 4, TypeScript (ESM), Prisma 6, Zod, jose (JWT/JWKS), RESTful API",
+            },
+            { title: "Database", description: "Supabase Postgres, Supabase Storage" },
+            { title: "Security", description: "Supabase Auth, asymmetric JWT (ES256), per-user data scoping, role-based access control" },
+            { title: "CI/CD", description: "GitHub, Netlify, Render" },
+            {
+                title: "Additional Tools",
+                description: "Chrome Developer Tools, XCode iOS Simulator, Visual Studio Code",
+            },
+        ],
+        link: "https://kimchinc-qms-test.netlify.app",
+    },
+
+    {
         title: "VisualAlgoFlow",
         shortSummary:
             "An interactive platform that visualizes algorithms like Binary Search and Two Pointers.",

@@ -5,13 +5,14 @@ import styles from "./Projects.module.css";
 import ProjectsData from "./ProjectsData.js";
 
 const PROJECTS = [
-    { image: "/visualalgoflow.png", orientation: "landscape", data: ProjectsData[0] },
-    { image: "/tarokotodo.png",     orientation: "portrait",  data: ProjectsData[1] },
-    { image: "/BM-Home.png",        orientation: "portrait",  data: ProjectsData[2] },
-    { image: "/yab.png",            orientation: "landscape", data: ProjectsData[3] },
-    { image: "/kimchinc.png",       orientation: "landscape", data: ProjectsData[4] },
-    { image: "/js.png",             orientation: "portrait",  data: ProjectsData[5] },
-    { image: "/ansm.png",           orientation: "portrait",  data: ProjectsData[6] },
+    { image: "/qmc.png",            orientation: "landscape", data: ProjectsData[0] },
+    { image: "/visualalgoflow.png", orientation: "landscape", data: ProjectsData[1] },
+    { image: "/tarokotodo.png",     orientation: "portrait",  data: ProjectsData[2] },
+    { image: "/BM-Home.png",        orientation: "portrait",  data: ProjectsData[3] },
+    { image: "/yab.png",            orientation: "landscape", data: ProjectsData[4] },
+    { image: "/kimchinc.png",       orientation: "landscape", data: ProjectsData[5] },
+    { image: "/js.png",             orientation: "portrait",  data: ProjectsData[6] },
+    { image: "/ansm.png",           orientation: "portrait",  data: ProjectsData[7] },
 ];
 
 export default function Projects() {
